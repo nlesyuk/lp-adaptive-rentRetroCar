@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="280" height="32" viewBox="0 0 280 32">
+    <defs>
+        <path id="a" d="M0 0h280v32H0z"/>
+    </defs>
+    <g fill="none" fill-rule="evenodd">
+        <mask id="b" fill="#fff">
+            <use xlink:href="#a"/>
+        </mask>
+        <text fill="#B7BECD" font-family="RobotoSlab-Regular, Roboto Slab" font-size="24" mask="url(#b)">
+            <tspan x="40" y="25">Make love, not war!</tspan>
+        </text>
+        <path fill="#B8BECC" fill-rule="nonzero" d="M14.531 28.98V18.578l-7.197 7.197a13.01 13.01 0 0 0 7.197 3.207zm0-14.557V3.019C8.008 3.75 2.937 9.282 2.937 16c0 2.83.9 5.45 2.43 7.588l9.164-9.165zM29.062 16c0-6.718-5.07-12.251-11.593-12.98v11.403l9.165 9.165A13.003 13.003 0 0 0 29.062 16zM17.47 18.577v10.404a13.01 13.01 0 0 0 7.197-3.207l-7.197-7.197zM16 32C7.163 32 0 24.837 0 16S7.163 0 16 0s16 7.163 16 16-7.163 16-16 16z" mask="url(#b)"/>
+    </g>
+</svg>
