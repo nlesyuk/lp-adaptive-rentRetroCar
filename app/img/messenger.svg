@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+    <g fill="none" fill-rule="evenodd">
+        <path fill="#FFF" d="M-131-476h1360v9486H-131z"/>
+        <g>
+            <rect width="32" height="32" fill="#1F8CFF" rx="4"/>
+            <path fill="#FFF" fill-rule="nonzero" d="M16 7c4.974 0 9 3.838 9 8.526 0 4.689-4.026 8.527-9 8.527-.853 0-1.706-.143-2.463-.332l-3.695 2.226v-4.215C8.09 20.17 7 17.99 7 15.526 7 10.838 11.026 7 16 7zm5.684 6.158l-4.263 2.368-2.368-2.368-4.737 5.21L14.579 16l2.368 2.368 4.737-5.21z"/>
+        </g>
+    </g>
+</svg>

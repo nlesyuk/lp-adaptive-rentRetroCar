@@ -4,27 +4,31 @@
 @import _mixins
 @import _general
 
+.container
+	max-width: 1296px
+
 .title
-	font: 3em/1em  $font
-	color: white
+	font: bold 3em/1em $font
+	text-align: center
+	color: $accent
 	&.black
-		color: $accent
+		color: $grey2
 
 .btn
-	display: block
-	font: 1em/1em $font
+	display: inline-block
+	font: bold .87em/1em $font2
 	text-transform: uppercase
+	text-decoration: none
 	text-align: center
+	letter-spacing: 1.17px
 	color: white
-	padding: 12px
-	background: red
+	padding: 20px
+	background: $accent
 	border: none
 	position: relative
-	z-index: 99
 	&:hover
-		background: $accent
-
-
+		// opacity: .7
+		background: $btnHover
 
 #top-nav
 	width: 100%
@@ -104,33 +108,675 @@
 	width: 100%
 	height: auto
 	background: white
-	background: url(../img/header-bg.svg) no-repeat center center
+	overflow: hidden
 	position: relative
+	z-index: 2
 	&:before
-		content:
+		content: url(../img/first_line.png)
+		position: absolute
+		left: calc(50% - 420px)
+		z-index: 3
+	.container
+		position: relative
+		z-index: 5
 	header
 		width: 100%
 		padding: 32px 0
-	.first__logo
-	.first__list
-		display: flex
-		li
-			a
+		.first__logo
+			display: inline-block
 			img
-	.first__location
-
+				display: block
+				max-width: 100%
+		.first__list
+			display: flex
+			justify-content: center
+			align-items: center
+			li
+				a
+					font: 1.5rem/.5 $font
+					text-decoration: none
+					color: $grey2
+					&:hover
+						opacity: .7
+		.first__location
+			font: 1.5rem/1.1 $font
+			text-align: right
+			color: $brightBlue
+			a
+				text-decoration: none
+				color: $brightBlue
+				&:hover,
+				&.active
+					font-weight: bold
+					color: $grey2
 	.first__title
+		margin-top: 130px
+		font: bold 5rem/1.1 $font
+		color: $yellow
+		margin-bottom: 16px
 	.first__subtitle
+		font: 3rem/1 $font
+		color: $grey
+		margin-bottom: 24px
 	.first__text1
+		font: 1.5rem/1 $font
+		color: $grey
+		margin-bottom: 24px
+		.bold
+			color: $yellow
+			font-weight: bold
 	.first__text2
+		font: 2rem/1 $font
+		color: $grey
+		margin-bottom: 32px
+	// .btn
+
+
+#eggs
+	width: 100%
+	padding: 80px 0
+	position: relative
+	.container
+		position: relative
+		z-index: 5
+	.eggs__list
+		display: flex
+		justify-content: space-between
+		li
+			width: calc(100% / 6)
+		img
+			display: block
+			margin: 0 auto
+			margin-bottom: 24px
+		.first__text3
+			font: 1rem/1 $font
+			text-align: center
+			color: $black
+
+
+#price
+	width: 100%
+	height: auto
+	background: url(../img/price__bg.jpg) no-repeat center center/cover
+	padding: 80px 0 152px 0
+	position: relative
+	z-index: 1
+	.price__table
+		width: 100%
+		thead
+			tr
+				height: 86px
+			th
+				position: relative
+				&:nth-child(2),
+				&:nth-child(3)
+					background: white
+				img
+					position: absolute
+					bottom: 0
+					left: calc(50% - 58px)
+		tbody
+			tr
+				&:last-child
+					td 
+						padding: 24px 0 40px 0
+				td
+					font: 1rem/1.25 $font3
+					text-align: left
+					color: white
+					padding: 24px 0
+					&:nth-child(2)
+						position: relative
+						&:before
+							content: ""
+							display: block
+							width: 24px
+							height: 1px
+							background: white
+							position: absolute
+							left: 0
+							bottom: -1px
+							z-index: 1
+					&:nth-child(2),
+					&:nth-child(3)
+						text-align: center
+						color: $black
+						background: white
+						border-bottom: 1px solid #e5eaf3
+					.accent
+						font: bold 1.25rem/1 $font3
+						text-align: center
+						color: $yellow
+						padding: 0 0 8px 0
+
+
+.flyform
+	width: 100%
+	height: auto
+	background: white
+	position: relative
+	padding-bottom: 80px
+	z-index: 2
+	&.baseform
+		background: $brightBlue2
+		padding: 80px 0
+		.flyform__form
+			margin-top: 0px
+	.flyform__form
+		margin-top: -70px
+		width: 100%
+		height: auto
+		box-shadow: 0 24px 32px 0 rgba(6, 49, 106, 0.1)
+		background-color: white
+		padding: 24px
+		display: flex
+		flex-wrap: wrap
+		justify-content: space-between
+		position: relative
+		z-index: 15
+		.flyform__title
+			display: block
+			width: 100%
+			font: bold 1.5rem/1.25 $font
+			text-align: center
+			color: $black
+			margin-bottom: 24px
+		input
+			width: calc(100% / 3 - 16px)
+			border: 1px solid $brightBlue3
+			padding: 10px 12px
+			font: .75rem/1.125 $font3
+			color: $brightBlue4
+		button
+			display: block
+			width: calc(100% / 3 - 16px)
+			font: bold .75em/1em $font2
+			text-transform: uppercase
+			text-decoration: none
+			text-align: center
+			letter-spacing: 1.17px
+			color: white
+			padding: 10px 0
+			background: $accent
+			border: none
+			position: relative
+			&:hover
+				cursor: pointer
+				background: $btnHover
+
+
+#clip
+	width: 100%
+	height: auto
+	padding: 40px 0
+	position: relative
+	z-index: 1
+	.title
+		margin-bottom: 56px
+	.clip__list
+		width: 100%
+		height: auto
+		display: flex
+		justify-content: space-between
+		flex-wrap: wrap
+		li
+			display: block
+			width: calc(100% / 4 - 10px)
+		.video
+			position: relative
+			width: 100%
+			// height: 0
+			// padding-bottom: 56.25%
+			// padding-bottom: 0%
+			// background-color: #000000
+		.video__link
+			display: block
+			// position: absolute
+			// top: 0
+			// left: 0
+			// width: 100%
+			// height: 100%
+		.video__media
+			display: block
+			width: 100%
+			// position: absolute
+			// top: 0
+			// left: 0
+			// width: 100%
+			// height: 100%
+			// border: none
+		.video__button
+			position: absolute
+			top: 50%
+			left: 50%
+			z-index: 1
+			display: block
+			padding: 0
+			width: 68px
+			height: 48px
+			border: none
+			background-color: transparent
+			transform: translate(-50%, -50%)
+			cursor: pointer
+		.video__button-shape
+			fill: #212121
+			fill-opacity: 0.8
+		.video__button-icon
+			fill: #ffffff
+		.video__button:focus
+			outline: none
+		.video:hover .video__button-shape,
+		.video__button:focus .video__button-shape
+			fill: #ff0000
+			fill-opacity: 1
+		.video--enabled
+			cursor: pointer
+			// padding-bottom: 56.25%
+			.video__button
+				display: block
+
+		.clip__name
+			margin-top: 16px
+			font: .87rem/1.25 $font3
+			text-align: center
+			color: $grey
+
+
+
+
+#done
+	width: 100%
+	height: auto
+	background: white
+	padding: 40px 0
+	overflow: hidden
+	position: relative
+	&:before
+		content: ""
+		width: 50%
+		height: calc(100% - 80px)
+		background: url(../img/bitmap.png) no-repeat 58% 0%/contain
+		position: absolute
+		top: 40px
+		right: 50%
+	&:after
+		content: ""
+		display: block
+		width: 50%
+		height: calc(100% - 80px)
+		background: url(../img/success__img@2x.jpg) no-repeat center center/cover $yellow
+		position: absolute
+		top: 40px
+		right: 0
+	.done__title
+		margin-top: 48px
+		font: bold 5rem/1.15 $font
+		color: $grey2
+		margin-bottom: 24px
 	.btn
-	.owl-carousel
-	.first__eggs
+		margin-bottom: 48px
+
+
+
+#gallery
+	width: 100%
+	height: auto
+	background: white
+	padding: 40px 0
+	position: relative
+	.title
+	.gallery__text
+
+
+
+#rev
+	width: 100%
+	height: auto
+	background: white
+	padding: 80px 0
+	overflow: hidden
+	position: relative
+	&:before
+		content: ""
+		width: 50%
+		height: 100%
+		height: calc(100% - 160px)
+		background: url(../img/rev__img.jpg) no-repeat 100% 0%/contain
+		position: absolute
+		top: 0px
+		top: 80px
+		right: 50%
+	.rev__title
+		margin-top: 48px
+		font: bold 5rem/1.15 $font
+		color: $grey2
+		margin-bottom: 40px
+	.rev__list
+		li
+			display: flex
+			justify-content: flex-start
+			align-items: center
+			flex-wrap: wrap
+			padding: 24px
+			background: white
+			box-shadow: 0 8px 16px 0 rgba(6, 49, 106, 0.1)
+			margin-bottom: 24px
+			.rev__ava
+				display: block
+				margin-right: 16px
+			.rev__name
+				font: .87rem/1 $font3
+				color: $grey
+			.rev__review
+				font: 1rem/1.5 $font3
+				color: $black
+				margin-left: 56px
 
 
 
 
- 
+#how
+	width: 100%
+	height: auto
+	background: $brightBlue2
+	padding: 80px 0 152px
+	overflow: hidden
+	position: relative
+	.title
+		margin-bottom: 62px
+	.how__list
+		display: flex
+		justify-content: space-between
+		li
+			width: calc(100% / 4 )
+			position: relative
+			&:last-child:before
+				display: none
+			&:nth-child(2):before
+				transform: rotateX(180deg) rotateY(180deg)
+			&:before
+				content: url(../img/how__arrow.png)
+				position: absolute
+				top: calc(50% - 33px - 30px)
+				right: -10%
+				transform: rotateY(180deg)
+		.how__img
+			display: block
+			margin: 0 auto
+			max-width: 100%
+			margin-bottom: 32px
+		.how__text
+			font: 1rem/1.5 $font3
+			text-align: center
+			color: $grey2
+
+
+
+
+
+#present
+	width: 100%
+	height: auto
+	padding: 40px 0 
+	background: url(../img/present__decorator2.png) no-repeat 100% 100% / auto
+	position: relative
+	z-index: 2
+	&:before
+		content: url(../img/present__decorator1.png)
+		position: absolute
+		right: 20%
+		top: -4%
+		z-index: 2
+	.container
+		position: relative
+		z-index: 5
+	.title.present
+		font-size: 5rem
+		text-align: left
+		margin-top: 40px
+		margin-bottom: 24px
+	.present__text
+		font: 1.5rem/1.25 $font3
+		color: $black
+		span
+			display: block
+			margin-top: 8px
+
+#rules
+	width: 100%
+	height: auto
+	padding: 40px 0 
+	position: relative
+	z-index: 2
+	.title
+		margin-bottom: 40px
+	.rules__list
+		&.shadow
+			position: relative
+			&:before
+				content: ""
+				display: block
+				width: 100%
+				height: 80px
+				background-color: transparent
+				background-image: linear-gradient(to top, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0))
+				position: absolute
+				bottom: 0
+		li
+			font: 1rem/1.5 $font3
+			color: $black
+			margin-bottom: 8px
+	.reules__more
+		display: block
+		padding: 8px 20px
+		margin: 0 auto
+		background: transparent
+		border: none
+		font: bold .65rem/1 $font3
+		text-transform: uppercase
+		text-align: center
+		letter-spacing: 0.8px
+		color: #8a8f99
+		position: relative
+		&:hover
+			color: $black
+			cursor: pointer
+			transition: all .25s 
+			&:after
+				border-color: $black
+				transition: all .25s 
+		&:after
+			content: ""
+			display: block
+			width: 5px
+			height: 5px
+			border-left: 2px solid #8a8f99
+			border-bottom: 2px solid #8a8f99
+			transform: rotate(-45deg)
+			position: absolute
+			right: 0px
+			top: calc(50% - 4px)
+			transition: all .25s 
+		&.opened
+			&:after
+				transform: rotate(135deg)
+				top: calc(50% - 2px)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+footer
+	width: 100%
+	padding: 196px 0 40px 0
+	background: url(../img/footer__bg.jpg) no-repeat center center/cover
+	.footer__subtitle
+		font: 1.5rem/1.25 $font
+		color: white
+		margin-bottom: 18px
+	.footer__text
+		display: block
+		font: 1.125rem/1.5 $font
+		text-decoration: none
+		color: white
+	.footer__social
+		display: flex
+		justify-content: space-between
+		li
+			a 
+				img
+					border-radius: 5px
+				&:hover
+					opacity: .6
+	.footer__copywrite
+		margin-top: 138px
+		font: .87rem/1.125 $font3
+		text-align: center
+		color: white
+		a 
+			color: white
+
 // sections end
 
 #owl_slider
@@ -141,28 +787,40 @@
 			width: 100%
 		.owl-nav
 			display: block
-			width: 100%
+			width: 160px
 			background: green
 			position: absolute
-			top: calc(50% - 19px)
+			// top: calc(50% - 19px)
+			bottom: 0
+			right: 0
 			display: flex
 			justify-content: space-between
 			pointer-events: none 
 			.owl-prev,
 			.owl-next
 				position: relative
-				width: 38px
-				height: 38px
+				width: 80px
+				height: 80px
 				padding: 5px 12px
-				border: 1px solid black
+				border: 1px solid white
+				background: white
 				pointer-events: auto
+				&:before
+					content: url(../img/slider__arrow.svg)
+					display: block
 				&:hover,
 				&:focus
 					outline: none
 					border: 1px solid $accent
+					background: $accent
+					&:before
+						filter: invert(100%) brightness(200%)
+			.owl-prev
+				&:before
+					content: url(../img/slider__arrow.svg)
+					transform: rotateY(180deg)
 		.owl-item
-			color: red
-			padding: 20px
+			padding: 0px
 			background: blue
 
 
