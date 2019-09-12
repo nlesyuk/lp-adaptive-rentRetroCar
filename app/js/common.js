@@ -84,23 +84,16 @@ $(".phone-mask").mask("099-999-99-99");
 
 
 
-//end ready
+$('#gelley__collage').masonry({
+	// columnWidth: 80,
+	gutter: 24,
+	percentPosition: true,
+	itemSelector: '.grid-item'
 });
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+//end ready
+});
 
 
 // FUNCTION DECLARATIONS:
@@ -248,10 +241,8 @@ document.addEventListener("DOMContentLoaded", function(){
 	}
 
 	function parseMediaURL(media) {
-		let regexp1 = /https:\/\/i\.ytimg\.com\/vi\/([a-zA-Z0-9_-]+)\/maxresdefault\.jpg/i;
 		let regexp = /https:\/\/youtu\.be\/([a-zA-Z0-9_-]+)/i ;
 		let url = media.href;
-		console.log(media, url);
 		let match = url.match(regexp);
 
 		return match[1];

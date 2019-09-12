@@ -26,6 +26,7 @@
 	background: $accent
 	border: none
 	position: relative
+	box-shadow: none
 	&:hover
 		// opacity: .7
 		background: $btnHover
@@ -382,8 +383,6 @@
 			color: $grey
 
 
-
-
 #done
 	width: 100%
 	height: auto
@@ -417,7 +416,6 @@
 		margin-bottom: 48px
 
 
-
 #gallery
 	width: 100%
 	height: auto
@@ -425,9 +423,17 @@
 	padding: 40px 0
 	position: relative
 	.title
-	.gallery__text
-
-
+		margin-bottom: 24px
+	#gelley__collage
+		padding: 0
+	.grid-item
+		width: calc( 33% - 48px)
+		width: 30%
+		float: left
+		margin-bottom: 24px
+	.grid-item img
+		display: block
+		max-width: 100%
 
 #rev
 	width: 100%
@@ -473,8 +479,6 @@
 				margin-left: 56px
 
 
-
-
 #how
 	width: 100%
 	height: auto
@@ -511,9 +515,6 @@
 			color: $grey2
 
 
-
-
-
 #present
 	width: 100%
 	height: auto
@@ -541,6 +542,7 @@
 		span
 			display: block
 			margin-top: 8px
+
 
 #rules
 	width: 100%
@@ -601,150 +603,6 @@
 			&:after
 				transform: rotate(135deg)
 				top: calc(50% - 2px)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 footer
@@ -824,35 +682,6 @@ footer
 			background: blue
 
 
-.countdown
-	display: flex
-	justify-content: center
-	.number-wrapper
-		display: block
-		width: 30%
-		position: relative
-		&.last:after
-			display: none
-		&.end
-			width: 100%
-			&:after
-				display: none
-		&:after
-			content: ":"
-			position: absolute
-			top: -3px
-			right: -10px
-			font: 800 3rem/1 $font
-			color: black
-		.number
-			display: block
-			font: 800 3rem/1 $font
-			text-align: center
-			color: black
-		.caption
-			display: none
-
-
 #thy
 	width: 100%
 	height: auto
@@ -893,13 +722,14 @@ footer
 
 
 .modal
+	.modal-body
 	.modal-content
 		border-radius: 0px
 		padding: 0%
 		margin-top: 25%
 		position: relative
 		z-index: 9999
-	.modal-body
+		padding: 24px
 		.close
 			display: block
 			width: 35px
@@ -907,15 +737,39 @@ footer
 			border-radius: 50%
 			background: transparent
 			position: absolute
-			right: -3%
-			top: -40px
-			font: 2.5em/0em  $font
-			color: black
+			right: 4px
+			top: 4px
+			font: 2.5em/0em  $font3
+			color: #7a8599
 			border: none
-			opacity: .6
+			opacity: 1
 			&:hover
-				opacitY: 1
-
+				opacitY: .6
+		.modal__title
+			display: block
+			width: 100%
+			font: bold 1.5rem/1.25 $font
+			text-align: center
+			color: $black
+			margin-bottom: 24px
+		.modal__form
+			display: block
+			width: 100%
+			input
+				display: block
+				width: 100%
+				border: 1px solid $brightBlue3
+				padding: 10px 12px
+				font: .87rem/1.125 $font3
+				color: $brightBlue4
+				margin-bottom: 16px
+			button[type=submit]
+				display: block
+				width: 100%
+				font: .87rem/1.125 $font3
+				letter-spacing: 1px
+				color: white
+				padding: 12px
 
 @media (max-width: 1200.98px)
 	color: red
