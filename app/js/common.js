@@ -40,27 +40,6 @@ $(document).ready(function() {
 		});
 	});
 
-// countdown
-/* 	var endTimer      = Date.now() + (60 * 60 * 3 * 1000) + (60 * 42 * 1000); // 3:42
-	var cookieName    = "endTimer";
-	var checkCookie   = getCookie(cookieName);
-	if(!checkCookie) setCookie(cookieName, endTimer, 30);
-	var cookie        = getCookie(cookieName);
-
-	var timerConfig = {
-		el: '.countdown',
-		endTimer: cookie
-	};
-
-	if( cookie > Date.now() ){
-		var timer = new CountdownTimer( timerConfig.el, timerConfig.endTimer);
-	} else {
-		setCookie(cookieName, endTimer, 30);
-		timerConfig.endTimer = getCookie(cookieName);
-		var timer = new CountdownTimer( timerConfig.el, timerConfig.endTimer);
-	}	
-	timer.countDown(); */
-		
 // sliders
 	var owl = $('#owl_slider');
 	var owlMaxSliders = owl.data('maxnum');
@@ -75,28 +54,18 @@ $(document).ready(function() {
 		navText:['', ''],
 		responsiveClass: true,
 		items: 1,
-		onChanged: callback
+		onChanged: setNumOfCurrentPage
 	});
-	// set maxnum 
-	$('.owl__num .all').text(owlMaxSliders);
+	// set maxnum
+	// $('.owl__num .all').text(owlMaxSliders);
 
 	// catch current num of slide
-	function callback(event) {
-		var element   = event.target;         // DOM element, in this example .owl-carousel
-		var name      = event.type;           // Name of the event, in this example dragged
-		var namespace = event.namespace;      // Namespace of the event, in this example owl.carousel
-		var items     = event.item.count;     // Number of items
-		var item      = event.item.index;     // Position of the current item
-		// Provided by the navigation plugin
-		var pages     = event.page.count;     // Number of pages
-		var page      = event.page.index;     // Position of the current page
-		var size      = event.page.size;
-		// console.log('element: ', element, 'name: ', name,'namespace: ', namespace)
-		$('.owl__num .current').text(item);
-		console.log('items: ', items, 'item: ', item,'pages: ', pages,'page: ', page,'size: ', size)
-		console.log(event)
-		console.log(event.item)
-		console.log(event.page)
+	function setNumOfCurrentPage(event) {
+		var items = event.item.count;
+		var item  = event.item.index;
+		$('.owl__num .current').text(item+1);
+		$('.owl__num .all').text(items);
+		// console.log('items: ', items, 'item: ', item);
 	}
 
 
@@ -282,6 +251,7 @@ document.addEventListener("DOMContentLoaded", function(){
 
 		iframe.setAttribute('allowfullscreen', '');
 		iframe.setAttribute('allow', 'autoplay');
+		iframe.setAttribute('height', '150px');
 		iframe.setAttribute('src', generateURL(id));
 		iframe.classList.add('video__media');
 

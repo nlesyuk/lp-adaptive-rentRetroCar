@@ -7,7 +7,7 @@
 <head>
 	<meta charset="utf-8">
 
-	<title>Оренда ретро-автобус Volkswagen T2 в Киеве и Киевской области</title>
+	<title>Оренда ретро-автобуса Volkswagen T2 в Киеве и Киевской области</title>
 	<meta name="description" content="Оренда ретро-автобус Volkswagen T2 в Киеве и Киевской области">
 	<meta content="width=1170" name="viewport" id="viewport">
 
@@ -57,28 +57,56 @@
 	<header>
 		<div class="container">
 			<div class="row">
-				<div class="col-lg-4">
+				<div class="col d-flex justify-content-between align-items-center">
+
+					<a href="/" class="first__logo">
+						<img src="img/logo.png" alt="logo">
+					</a>
+
+					<button class="first__burger">
+							<svg 
+							xmlns="http://www.w3.org/2000/svg"
+							xmlns:xlink="http://www.w3.org/1999/xlink"
+							width="21px" height="14px">
+						   <path fill-rule="evenodd"  fill="rgb(122, 133, 153)"
+							d="M0.995,0.076 L19.494,0.076 C20.043,0.076 20.488,0.521 20.488,1.070 C20.488,1.620 20.043,2.065 19.494,2.065 L0.995,2.065 C0.445,2.065 -0.000,1.620 -0.000,1.070 C-0.000,0.521 0.445,0.076 0.995,0.076 Z"/>
+						   <path fill-rule="evenodd"  fill="rgb(122, 133, 153)"
+							d="M9.349,6.043 L19.494,6.043 C20.043,6.043 20.488,6.489 20.488,7.038 C20.488,7.587 20.043,8.032 19.494,8.032 L9.349,8.032 C8.800,8.032 8.355,7.587 8.355,7.038 C8.355,6.489 8.800,6.043 9.349,6.043 Z"/>
+						   <path fill-rule="evenodd"  fill="rgb(122, 133, 153)"
+							d="M5.371,12.011 L19.494,12.011 C20.043,12.011 20.488,12.456 20.488,13.005 C20.488,13.555 20.043,14.000 19.494,14.000 L5.371,14.000 C4.821,14.000 4.376,13.555 4.376,13.005 C4.376,12.456 4.821,12.011 5.371,12.011 Z"/>
+						   </svg>
+					</button>
+
+					<ul class="first__list d-none d-md-flex">
+						<li><a href="//t.me/Prokat_limuzinov"><img src="img/telegramtop.svg" alt="telegram"></a></li>
+						<li><a href="tel:+380952167315"><img src="img/phone.svg" alt="phone"></a></li>
+						<li><a href="tel:+380952167315">+38 (095) 216-73-15</a></li>
+					</ul>
+					<p class="first__location d-none d-md-block"><a href="#" class="active">ua</a> / <a href="#">ru</a></p>
+
+				</div>
+<!-- 				
+				<div class="col- col-md-4 col-lg-4">
 					
 					<a href="/" class="first__logo">
 						<img src="img/logo.svg" alt="logo">
 					</a>
 					
 				</div>
-				<div class="col-lg-4">
+				<div class="col col-md-6 col-lg-4">
 
 					<ul class="first__list">
-						<!-- <li><a href="#"><img src="img/vibertop.svg" alt="viber"></a></li> -->
 						<li><a href="#"><img src="img/telegramtop.svg" alt="telegram"></a></li>
 						<li><a href="tel:+380952167315"><img src="img/phone.svg" alt="phone"></a></li>
 						<li><a href="tel:+380952167315">+38 (095) 216-73-15</a></li>
 					</ul>
 					
 				</div>
-				<div class="col-lg-4">
+				<div class="col col-md-2 col-lg-4">
 
 					<p class="first__location"><a href="#" class="active">ua</a> / <a href="#">ru</a></p>
 
-				</div>
+				</div> -->
 			</div>
 		</div>
 	</header>
@@ -86,7 +114,7 @@
 
 	<div class="container">
 		<div class="row">
-			<div class="col-lg-6">
+			<div class="col-md-6 col-lg-6">
 
 				<h1 class="first__title">Ретро-автобус</h1>
 				<h2 class="first__subtitle">Volkswagen T2</h2>
@@ -95,7 +123,7 @@
 				<a href="javascript:void(0)" class="btn" data-toggle="modal" data-target="#modal__order">Оставить заявку</a>
 
 			</div>
-			<div class="col-lg-6">
+			<div class="col-md-6 col-lg-6">
 
 				<div class="wol__cont">
 					<div id="owl_slider" class="owl-carousel" data-maxnum="13">
@@ -114,7 +142,7 @@
 						<img src="img/slider/13.jpg" alt="gallery" data-num="13">
 					</div>
 					<p class="owl__num">
-						<span class="current">1</span>/<span class="all">1113</span>
+						<span class="current">1</span>/<span class="all">1s</span>
 					</p>
 				</div>
 
@@ -162,7 +190,7 @@
 
 </section>
 
-
+<!-- 
 <section id="price">
 	<div class="container">
 		<div class="row">
@@ -228,7 +256,7 @@
 				<form action="send.php" class="flyform__form">
 					<h2 class="flyform__title">Проверить доступность ретро-автобуса на нужную дату?</h2>
 					<input type="text" name="name" placeholder="Имя" required>
-					<input type="text" name="phone" placeholder="Номер телефона" required>
+					<input type="text" name="phone" class="phone-mask" placeholder="Номер телефона" required>
 					<button type="submit" class="btn">Оставить заявку</button>
 				</form>
 
@@ -406,7 +434,7 @@
 				<form action="send.php" class="flyform__form">
 					<h2 class="flyform__title">Проверить доступность ретро-автобуса на нужную дату?</h2>
 					<input type="text" name="name" placeholder="Имя" required>
-					<input type="text" name="phone" placeholder="Номер телефона" required>
+					<input type="text" name="phone" class="phone-mask" placeholder="Номер телефона" required>
 					<button type="submit" class="btn">Оставить заявку</button>
 				</form>
 
@@ -491,7 +519,7 @@
 				<form action="send.php" class="flyform__form">
 					<h2 class="flyform__title">Проверить доступность ретро-автобуса на нужную дату?</h2>
 					<input type="text" name="name" placeholder="Имя" required>
-					<input type="text" name="phone" placeholder="Номер телефона" required>
+					<input type="text" name="phone" class="phone-mask" placeholder="Номер телефона" required>
 					<button type="submit" class="btn">Оставить заявку</button>
 				</form>
 
@@ -576,7 +604,7 @@
 				<form action="send.php" class="flyform__form">
 					<h2 class="flyform__title">Проверить доступность ретро-автобуса на нужную дату?</h2>
 					<input type="text" name="name" placeholder="Имя" required>
-					<input type="text" name="phone" placeholder="Номер телефона" required>
+					<input type="text" name="phone" class="phone-mask" placeholder="Номер телефона" required>
 					<button type="submit" class="btn">Оставить заявку</button>
 				</form>
 
@@ -611,11 +639,9 @@
 
 				<h3 class="footer__subtitle">Мы в соцсетях</h3>
 				<ul class="footer__social">
-					<li><a href="#" target="_blank"><img src="img/facebook.svg" alt="social icon"></a></li>
+					<li><a href="//t.me/Prokat_limuzinov" target="_blank"><img src="img/facebook.svg" alt="social icon"></a></li>
 					<li><a href="//www.instagram.com/prokat_limuzinov_com/" target="_blank"><img src="img/instagram.svg" alt="social icon"></a></li>
-					<!-- <li><a href="#" target="_blank"><img src="img/messenger.svg" alt="social icon"></a></li> -->
 					<li><a href="#" target="_blank"><img src="img/telegram.svg" alt="social icon"></a></li>
-					<!-- <li><a href="#" target="_blank"><img src="img/viber.svg" alt="social icon"></a></li> -->
 				</ul>
 
 			</div>
@@ -630,7 +656,7 @@
 	</div>
 </footer>
 
-
+-->
 
 
 	<!--[if lt IE 9]>
@@ -662,7 +688,7 @@
 			<h3 class="modal__title">Проверить доступность <br>ретро-автобуса на нужную дату?</h3>
 			<form action="send.php" method="POST" class="modal__form">
 				<input type="text" name="name" placeholder="Имя" required>
-				<input type="text" name="name" placeholder="Номер телефона" required>
+				<input type="text" name="phone" class="phone-mask" placeholder="Номер телефона" required>
 				<button type="submit" class="btn">Оставить заявку</button>
 			</form>
 

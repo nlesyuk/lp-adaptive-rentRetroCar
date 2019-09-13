@@ -4,9 +4,6 @@
 @import _mixins
 @import _general
 
-.container
-	max-width: 1296px
-
 .title
 	font: bold 3em/1em $font
 	text-align: center
@@ -124,9 +121,14 @@
 		width: 100%
 		padding: 32px 0
 		.first__logo
-			display: inline-block
+			// display: flex
+			// height: 100%
+			// justify-content: flex-start
+			// align-items: center
+			display: block
 			img
 				display: block
+				width: 100%
 				max-width: 100%
 		.first__list
 			display: flex
@@ -711,7 +713,7 @@ footer
 	.all
 		margin-left: 1px
 
-	
+
 #thy
 	width: 100%
 	height: auto
@@ -752,7 +754,6 @@ footer
 
 
 .modal
-	.modal-body
 	.modal-content
 		border-radius: 0px
 		padding: 0%
@@ -772,9 +773,10 @@ footer
 			font: 2.5em/0em  $font3
 			color: #7a8599
 			border: none
+			cursor: pointer
 			opacity: 1
 			&:hover
-				opacitY: .6
+				opacity: .6
 		.modal__title
 			display: block
 			width: 100%
@@ -800,18 +802,185 @@ footer
 				letter-spacing: 1px
 				color: white
 				padding: 12px
+@media (min-width: 1200.98px)
+	.container
+		max-width: 1296px
 
 @media (max-width: 1200.98px)
-	color: red
+	#first
+		.first__title
+			margin-top: 30px
+			font: bold 3.75rem/1.1 $font
+			margin-bottom: 16px
+		.first__subtitle
+			font: 3rem/1 $font
+			margin-bottom: 24px
+		.first__text1
+			font: 1.5rem/1 $font
+			margin-bottom: 24px
+		.first__text2
+			font: 2rem/1 $font
+			margin-bottom: 32px
+		// .btn
+
 
 // md
 @media (max-width: 992.98px)
-	color: red
+	#first
+		z-index: 2
+		header
+			padding: 32px 0
+			.first__logo
+				width: 200px
+			.first__list
+				display: flex
+				justify-content: center
+				align-items: center
+				li
+					a
+						display: block
+						font: 1.25rem/.5 $font
+			.first__location
+				font: 1.25rem/1.1 $font
+		.first__title
+			width: calc(100% + 150px)
+			margin-top: 16px
+			font: bold 3.75rem/1.1 $font
+			margin-bottom: 16px
+			position: relative
+			z-index: 5
+		.first__subtitle
+			font: 2.5rem/1 $font
+			margin-bottom: 24px
+		.first__text1
+			font: 1.5rem/1 $font
+			margin-bottom: 24px
+		.first__text2
+			font: 2rem/1 $font
+			margin-bottom: 32px
+	#eggs
+		padding: 80px 0
+		.eggs__list
+			justify-content: space-between
+			flex-wrap: wrap
+			li
+				width: calc(100% / 3)
+				margin-bottom: 24px
+				&:nth-child(4),
+				&:nth-child(5),
+				&:nth-child(6)
+					margin-bottom: 0
+			img
+				margin-bottom: 24px
+			.first__text3
+				font: 1rem/1 $font
 
+
+	#owl_slider
+		&.owl-carousel
+			.owl-nav
+				width: 100px
+				.owl-prev,
+				.owl-next
+					width: 50px
+					height: 50px
 // sm
 @media (max-width: 768.98px)
-	color: red
+	#first
+		z-index: 2
+		header
+			padding: 32px 0
+			.first__logo
+				width: 150px
+				width: auto
+				max-width: 40%
+			.first__list
+				display: flex
+				justify-content: center
+				align-items: center
+				li
+					a
+						display: block
+						font: 1.25rem/.5 $font
+			.first__location
+				font: 1.125rem/1.1 $font
+			.first__burger
+				border: none
+				background: none
+				svg 
+					&:hover
+						fill: red
+		.first__title
+			width: 100%
+			margin-top: 0px
+			font: bold 3rem/1.1 $font
+			margin-bottom: 16px
+			position: relative
+			z-index: 5
+		.first__subtitle
+			font: 2rem/1 $font
+			margin-bottom: 24px
+		.first__text1
+			font: 1.5rem/1 $font
+			margin-bottom: 16px
+		.first__text2
+			font: 1.5rem/1 $font
+			margin-bottom: 32px
+		.btn
+			margin-bottom: 24px
+	#eggs
+		padding: 80px 0
+		.eggs__list
+			justify-content: space-between
+			flex-wrap: wrap
+			li
+				width: calc(100% / 3)
+				margin-bottom: 24px
+				&:nth-child(4),
+				&:nth-child(5),
+				&:nth-child(6)
+					margin-bottom: 0
+			img
+				margin-bottom: 24px
+			.first__text3
+				font: 1rem/1 $font
 
 // xs
 @media (max-width: 576.98px)
-	color: red
+	#first
+		z-index: 2
+		header
+			padding: 32px 0
+			.first__logo
+				max-width: 90%
+				img 
+					width: auto
+			.first__list
+				display: flex
+				justify-content: center
+				align-items: center
+				li
+					a
+						display: block
+						font: 1.25rem/.5 $font
+			.first__location
+				font: 1.25rem/1.1 $font
+		.first__title
+			width: 100%
+			margin-top: 0px
+			font: bold 3rem/1.1 $font
+			margin-bottom: 16px
+			position: relative
+			z-index: 5
+		.first__subtitle
+			font: 2rem/1 $font
+			margin-bottom: 24px
+		.first__text1
+			font: 1.5rem/1 $font
+			margin-bottom: 16px
+		.first__text2
+			font: 1.5rem/1 $font
+			margin-bottom: 32px
+		.btn
+			margin-bottom: 24px
+	#eggs
