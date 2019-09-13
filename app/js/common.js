@@ -24,7 +24,7 @@ $(document).ready(function() {
 		});
 	} */
 
-$(".phone-mask").mask("099-999-99-99");
+	$(".phone-mask").mask("099-999-99-99");
 
 //scroll add .scroll to buttons for slowly move to anchor
 	$('.scroll').bind('click.smoothscroll',function (e) {
@@ -41,56 +41,85 @@ $(".phone-mask").mask("099-999-99-99");
 	});
 
 // countdown
-		var endTimer      = Date.now() + (60 * 60 * 3 * 1000) + (60 * 42 * 1000); // 3:42
-		var cookieName    = "endTimer";
-		var checkCookie   = getCookie(cookieName);
-		if(!checkCookie) setCookie(cookieName, endTimer, 30);
-		var cookie        = getCookie(cookieName);
+/* 	var endTimer      = Date.now() + (60 * 60 * 3 * 1000) + (60 * 42 * 1000); // 3:42
+	var cookieName    = "endTimer";
+	var checkCookie   = getCookie(cookieName);
+	if(!checkCookie) setCookie(cookieName, endTimer, 30);
+	var cookie        = getCookie(cookieName);
 
-		var timerConfig = {
-			el: '.countdown',
-			endTimer: cookie
-		};
+	var timerConfig = {
+		el: '.countdown',
+		endTimer: cookie
+	};
 
-		if( cookie > Date.now() ){
-			var timer = new CountdownTimer( timerConfig.el, timerConfig.endTimer);
-		} else {
-			setCookie(cookieName, endTimer, 30);
-			timerConfig.endTimer = getCookie(cookieName);
-			var timer = new CountdownTimer( timerConfig.el, timerConfig.endTimer);
-		}	
-		timer.countDown();
+	if( cookie > Date.now() ){
+		var timer = new CountdownTimer( timerConfig.el, timerConfig.endTimer);
+	} else {
+		setCookie(cookieName, endTimer, 30);
+		timerConfig.endTimer = getCookie(cookieName);
+		var timer = new CountdownTimer( timerConfig.el, timerConfig.endTimer);
+	}	
+	timer.countDown(); */
 		
 // sliders
-		var owl = $('#owl_slider');
-		owl.owlCarousel({
-			loop: true,
-			nav: true,
-			autoplay: true,
-			autoplayHoverPause: true,
-			autoplayTimeout: 3000,
-			margin: 5,
-			dots: false,
-			navText:['', ''],
-			responsiveClass: true,
-			items: 1
-		});
-		$('.customPrevBtn').click(function() {
-			owl.trigger('prev.owl.carousel', [250]);
-		});
-		$('.customNextBtn').click(function() {
-			owl.trigger('next.owl.carousel', [250]);
-		});
+	var owl = $('#owl_slider');
+	var owlMaxSliders = owl.data('maxnum');
+	owl.owlCarousel({
+		loop: false,
+		nav: true,
+		autoplay: false,
+		autoplayHoverPause: true,
+		autoplayTimeout: 3000,
+		margin: 5,
+		dots: false,
+		navText:['', ''],
+		responsiveClass: true,
+		items: 1,
+		onChanged: callback
+	});
+	// set maxnum 
+	$('.owl__num .all').text(owlMaxSliders);
+
+	// catch current num of slide
+	function callback(event) {
+		var element   = event.target;         // DOM element, in this example .owl-carousel
+		var name      = event.type;           // Name of the event, in this example dragged
+		var namespace = event.namespace;      // Namespace of the event, in this example owl.carousel
+		var items     = event.item.count;     // Number of items
+		var item      = event.item.index;     // Position of the current item
+		// Provided by the navigation plugin
+		var pages     = event.page.count;     // Number of pages
+		var page      = event.page.index;     // Position of the current page
+		var size      = event.page.size;
+		// console.log('element: ', element, 'name: ', name,'namespace: ', namespace)
+		$('.owl__num .current').text(item);
+		console.log('items: ', items, 'item: ', item,'pages: ', pages,'page: ', page,'size: ', size)
+		console.log(event)
+		console.log(event.item)
+		console.log(event.page)
+	}
 
 
+// Rules toggle
+	$("#rules .rules__more").on('click', function(){
 
-$('#gelley__collage').masonry({
-	// columnWidth: 80,
-	gutter: 24,
-	percentPosition: true,
-	itemSelector: '.grid-item'
-});
+		if( $(this).hasClass('opened') ) {
+			// btn
+			$(this).removeClass('opened');
+			$(this).text('Развернуть');
+			// list
+			$("#rules .rules__list").height('160px')
+			$("#rules .rules__list").removeClass('opened');
+		} else {
+			// btn
+			$(this).addClass('opened');
+			$(this).text('Свернуть');
+			// list
+			$("#rules .rules__list").height('92%')
+			$("#rules .rules__list").addClass('opened');
+		}
 
+	});
 
 //end ready
 });

@@ -305,12 +305,15 @@
 				cursor: pointer
 				background: $btnHover
 
+#line
+	background: url(../img/linebig.png) no-repeat top center/cover white
 
 #clip
 	width: 100%
 	height: auto
 	padding: 40px 0
 	position: relative
+	background: transparent
 	z-index: 1
 	.title
 		margin-bottom: 56px
@@ -386,7 +389,7 @@
 #done
 	width: 100%
 	height: auto
-	background: white
+	background: transparent
 	padding: 40px 0
 	overflow: hidden
 	position: relative
@@ -419,26 +422,25 @@
 #gallery
 	width: 100%
 	height: auto
-	background: white
+	background: transparent
 	padding: 40px 0
 	position: relative
 	.title
 		margin-bottom: 24px
-	#gelley__collage
-		padding: 0
-	.grid-item
-		width: calc( 33% - 48px)
-		width: 30%
-		float: left
+	.gallery__text
+		font: bold 1.125rem/1.4 $font
+		text-align: center
+		color: $grey
+	.gallery__img
 		margin-bottom: 24px
-	.grid-item img
-		display: block
-		max-width: 100%
+	.gallery__row
+		margin-top: -330px
+
 
 #rev
 	width: 100%
 	height: auto
-	background: white
+	background: url(../img/rev__lines.png) no-repeat top center/contain white
 	padding: 80px 0
 	overflow: hidden
 	position: relative
@@ -547,31 +549,40 @@
 #rules
 	width: 100%
 	height: auto
-	padding: 40px 0 
+	padding: 40px 0
 	position: relative
 	z-index: 2
 	.title
 		margin-bottom: 40px
 	.rules__list
-		&.shadow
-			position: relative
+		height: 160px
+		overflow: hidden
+		position: relative
+		transition: all 1.25s
+		&:before
+			content: ""
+			display: block
+			width: 100%
+			height: 80px
+			background-color: transparent
+			background-image: linear-gradient(to top, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0))
+			position: absolute
+			bottom: 0
+			pointer-events: none
+		&.opened
+			// height: auto
+			// height: 350px
 			&:before
-				content: ""
-				display: block
-				width: 100%
-				height: 80px
-				background-color: transparent
-				background-image: linear-gradient(to top, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0))
-				position: absolute
-				bottom: 0
+				display: none
 		li
 			font: 1rem/1.5 $font3
 			color: $black
 			margin-bottom: 8px
-	.reules__more
+	.rules__more
 		display: block
 		padding: 8px 20px
 		margin: 0 auto
+		margin-top: 10px
 		background: transparent
 		border: none
 		font: bold .65rem/1 $font3
@@ -620,8 +631,11 @@ footer
 		color: white
 	.footer__social
 		display: flex
-		justify-content: space-between
+		justify-content: flex-start
 		li
+			margin-right: 24px
+			&:last-child
+				margin-right: 0px
 			a 
 				img
 					border-radius: 5px
@@ -637,6 +651,10 @@ footer
 
 // sections end
 
+.wol__cont
+	width: 100%
+	height: auto
+	position: relative
 #owl_slider
 	position: relative
 	z-index: 2
@@ -648,7 +666,6 @@ footer
 			width: 160px
 			background: green
 			position: absolute
-			// top: calc(50% - 19px)
 			bottom: 0
 			right: 0
 			display: flex
@@ -680,8 +697,21 @@ footer
 		.owl-item
 			padding: 0px
 			background: blue
+.owl__num
+	display: block
+	font: 1.5rem/1 $font
+	color: white
+	position: absolute
+	bottom: 17px
+	left: 32px
+	z-index: 54
+	.current
+		font: bold 3rem/1 $font
+		margin-right: 1px
+	.all
+		margin-left: 1px
 
-
+	
 #thy
 	width: 100%
 	height: auto
