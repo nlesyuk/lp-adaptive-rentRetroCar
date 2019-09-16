@@ -1,7 +1,7 @@
 $(document).ready(function() {
 
 // mobile menu
-/* 	let mobileMenu = document.querySelector("#mobile-menu");
+	let mobileMenu = document.querySelector("#mobile-menu");
 	if( mobileMenu != null ){
 		var TouchMenu = TouchMenuLA({
 			target: mobileMenu,
@@ -11,19 +11,20 @@ $(document).ready(function() {
 			}
 		});
 
-		$('#menu_btn').on('click', function(){
+		$('.first__burger').on('click', function(){
 			TouchMenu.toggle();
 		});
 
-		$('#menu_close').on('click', function(){
+		// $('#menu_close').on('click', function(){
+		// 	TouchMenu.toggle();	
+		// });
+
+		$('.menu_list li a').on('click', function(){
 			TouchMenu.toggle();	
 		});
+	}
 
-		$('.items-menu').on('click', function(){
-			TouchMenu.toggle();	
-		});
-	} */
-
+// mask
 	$(".phone-mask").mask("099-999-99-99");
 
 //scroll add .scroll to buttons for slowly move to anchor
