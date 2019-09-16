@@ -2,7 +2,7 @@ $(document).ready(function() {
 
 // mobile menu
 	let mobileMenu = document.querySelector("#mobile-menu");
-	if( mobileMenu != null ){
+	if( mobileMenu != null ) {
 		var TouchMenu = TouchMenuLA({
 			target: mobileMenu,
 			width: 300,
@@ -15,11 +15,7 @@ $(document).ready(function() {
 			TouchMenu.toggle();
 		});
 
-		// $('#menu_close').on('click', function(){
-		// 	TouchMenu.toggle();	
-		// });
-
-		$('.menu_list li a').on('click', function(){
+		$('.menu_list li a, .menu_list li button').on('click', function(){
 			TouchMenu.toggle();	
 		});
 	}
@@ -57,9 +53,6 @@ $(document).ready(function() {
 		items: 1,
 		onChanged: setNumOfCurrentPage
 	});
-	// set maxnum
-	// $('.owl__num .all').text(owlMaxSliders);
-
 	// catch current num of slide
 	function setNumOfCurrentPage(event) {
 		var items = event.item.count;
@@ -85,11 +78,48 @@ $(document).ready(function() {
 			$(this).addClass('opened');
 			$(this).text('Свернуть');
 			// list
-			$("#rules .rules__list").height('92%')
+			// $("#rules .rules__list").height('92%')
 			$("#rules .rules__list").addClass('opened');
 		}
 
 	});
+
+
+// send form
+	$( "form" ).on( "submit", function( event ) {
+		event.preventDefault();
+		var form = this; 
+		var data = $(form).serialize();
+		$.ajax({
+			type: 'POST',
+			url: "send.php",
+			dataType: "html",
+			data: data,
+			success: function(data) {
+				var json = JSON.parse(data);
+				// console.log(data);
+				$(form)[0].reset();
+
+				if(json.status === "OK") {
+					$("#modal__order").modal("hide");
+
+					setTimeout(function(){
+						$("#modal__ok").modal("show");
+					}, 1000);
+
+					setTimeout(function(){
+						$("#modal__ok").modal("hide");
+					}, 10000);
+				}
+			},
+			error: function (data) {
+				console.log(data);
+				alert("Error while send data! =(");
+			}
+		});
+	});
+
+// $("#modal__ok").modal("show");
 
 //end ready
 });
@@ -252,7 +282,8 @@ document.addEventListener("DOMContentLoaded", function(){
 
 		iframe.setAttribute('allowfullscreen', '');
 		iframe.setAttribute('allow', 'autoplay');
-		iframe.setAttribute('height', '150px');
+		// iframe.setAttribute('height', '150px');
+		iframe.setAttribute('height', '286px');
 		iframe.setAttribute('src', generateURL(id));
 		iframe.classList.add('video__media');
 

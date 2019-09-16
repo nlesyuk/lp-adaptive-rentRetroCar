@@ -56,11 +56,23 @@
 <div id="mobile-menu" class="touch-menu-la">
 	<nav>
 		<ul class="menu_list">
-			<li><a href="#give" class="scroll">Программа</a></li>
-			<li><a href="#result" class="scroll">Результаты</a></li>
-			<li><a href="#author" class="scroll">Об авторе</a></li>
-			<li><a href="#cost" class="scroll">Стоимость</a></li>
-			<li><a href="javascript:void(0)" data-toggle="modal" data-target="#modal_order">Записаться</a></li>
+			<li><a href="#g" class="scroll">Галерея</a></li>
+			<li><a href="#price" class="scroll">Стоимость</a></li>
+			<li><a href="#rules" class="scroll">Правила аренды</a></li>
+			<li>
+				<p class="first__location d-none d-md-block"><a href="#" class="active">ua</a> / <a href="#">ru</a></p>
+			</li>
+			<li></li>
+			<li><button data-toggle="modal" data-target="#modal__order">Оставить заявку</button></li>
+			<li>
+				<a href="//t.me/Prokat_limuzinov" class="telegram">
+					<img src="img/telegramtop.svg" alt="telegram" >
+				</a>
+				<a href="tel:+380952167315" class="menu__phone">+38 (095) 216-73-15</a>
+			</li>
+			<li>
+				<a href="mailto:info@prokatlimuzinov.com" class="menu__email">info@prokatlimuzinov.com</a>
+			</li>
 		</ul>
 	</nav>
 </div>
@@ -74,7 +86,7 @@
 			<div class="row">
 				<div class="col d-flex justify-content-between align-items-center">
 
-					<a href="/" class="first__logo">
+					<a href="javascript:void(0)" class="first__logo">
 						<img src="img/logo.png" alt="logo">
 					</a>
 
@@ -100,28 +112,6 @@
 					<p class="first__location d-none d-md-block"><a href="#" class="active">ua</a> / <a href="#">ru</a></p>
 
 				</div>
-<!-- 				
-				<div class="col- col-md-4 col-lg-4">
-					
-					<a href="/" class="first__logo">
-						<img src="img/logo.svg" alt="logo">
-					</a>
-					
-				</div>
-				<div class="col col-md-6 col-lg-4">
-
-					<ul class="first__list">
-						<li><a href="#"><img src="img/telegramtop.svg" alt="telegram"></a></li>
-						<li><a href="tel:+380952167315"><img src="img/phone.svg" alt="phone"></a></li>
-						<li><a href="tel:+380952167315">+38 (095) 216-73-15</a></li>
-					</ul>
-					
-				</div>
-				<div class="col col-md-2 col-lg-4">
-
-					<p class="first__location"><a href="#" class="active">ua</a> / <a href="#">ru</a></p>
-
-				</div> -->
 			</div>
 		</div>
 	</header>
@@ -205,13 +195,13 @@
 
 </section>
 
-<!-- 
+
 <section id="price">
 	<div class="container">
 		<div class="row">
-			<div class="col-12 col-md-8 offset-md-2">
+			<div class="col-12 col-md-12 offset-md-0 col-lg-8 offset-lg-2">
 
-				<table class="price__table">
+				<table class="price__table d-none d-sm-table">
 					<thead>
 						<tr>
 							<th>&nbsp;</th>
@@ -230,7 +220,7 @@
 							<td><span class="accent">500 грн</span></td>
 						</tr>
 						<tr>
-							<td>Стоимость подачи авто на локацию</td>
+							<td>Стоимость подачи авто на локацию <img src="img/help-circle-fill2.svg" alt="help" title="SOME TEXT WICHT HELP YOU"></td>
 							<td>450 грн</td>
 							<td>500 грн</td>
 						</tr>
@@ -257,6 +247,61 @@
 					</tbody>
 				</table>
 
+				<table class="price__table d-table d-sm-none">
+					<thead>
+						<tr>
+							<th>
+								<img src="img/vws.png" alt="vw" class="price__vw">
+							</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>
+								<p class="price__title">Cтоимость аренды за один час</p>
+								<span class="accent">450 грн</span>
+								<span class="accent">500 грн</span>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<p class="price__title">Стоимость подачи авто на локацию <img src="img/help-circle-fill.svg" alt="help" title="SOME TEXT WICHT HELP YOU"></p>
+								<span class="general">450 грн</span>
+								<span class="general">450 грн</span>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<p class="price__title">Стоимость выезда авто за город <br>(до 20 км от КПП)</p>
+								<span class="general">450 грн</span>
+								<span class="general">450 грн</span>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<p class="price__title">Количество посадочных мест</p>
+								<span class="general">450 грн</span>
+								<span class="general">450 грн</span>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<p class="price__title">Год выпуска авто</p>
+								<span class="general">1973</span>
+								<span class="general">1972</span>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<p class="price__title">Габариты, см (ДхВхШ)</p>
+								<span class="general">440 x 200 x 170</span>
+								<span class="general">450 х 172 х 195</span>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+
+
 			</div>
 		</div>
 	</div>
@@ -266,9 +311,9 @@
 <section class="flyform">
 	<div class="container">
 		<div class="row">
-			<div class="col-md-8 offset-md-2">
+			<div class="col-md-12 offset-md-0 col-lg-8 offset-lg-2">
 
-				<form action="send.php" class="flyform__form">
+				<form  class="flyform__form" method="POST">
 					<h2 class="flyform__title">Проверить доступность ретро-автобуса на нужную дату?</h2>
 					<input type="text" name="name" placeholder="Имя" required>
 					<input type="text" name="phone" class="phone-mask" placeholder="Номер телефона" required>
@@ -280,7 +325,9 @@
 	</div>
 </section>
 
+
 <section id="line">
+
 <section id="clip">
 	<div class="container">
 		<div class="row">
@@ -368,7 +415,7 @@
 </section>
 
 
-<section id="gallery">
+<section id="gallery" id="g">
 	<div class="container">
 		<div class="row">
 			<div class="col">
@@ -379,74 +426,89 @@
 			</div>
 		</div>
 
-		<div class="row">
+		<div class="row d-flex d-md-none">
+			<div class="col">
+
+				<a data-fancybox="gallery" href="img/gallery/8.jpg" >
+					<img src="img/gallery_xs.png" alt="gallery" class="img-responsive gallery__img">
+				</a>
+
+			</div>
+		</div>
+
+		<div class="row d-none d-md-flex">
 			<div class="col-md-6">
-				<a data-fancybox="gallery" href="img/gallery/9.jpg">
-					<img src="img/gallery-small/gallery_small-1.jpg" alt="gallery" class="img-resposnive gallery__img">
+				<a data-fancybox="gallery" href="img/gallery/9.jpg" class="big">
+					<img src="img/gallery-small/gallery_small-1.jpg" alt="gallery" class="img-responsive gallery__img">
 				</a>
 			</div>
 			<div class="col-md-3">
-				<a data-fancybox="gallery" href="img/gallery/2.jpg">
-					<img src="img/gallery-small/gallery_small-2.jpg" alt="gallery" class="img-resposnive gallery__img">
+				<a data-fancybox="gallery" href="img/gallery/2.jpg" class="small">
+					<img src="img/gallery-small/gallery_small-2.jpg" alt="gallery" class="img-responsive gallery__img">
 				</a>
-				<a data-fancybox="gallery" href="img/gallery/1.jpg">
-					<img src="img/gallery-small/gallery_small-4.jpg" alt="gallery" class="img-resposnive gallery__img">
+				<a data-fancybox="gallery" href="img/gallery/1.jpg" class="tol">
+					<img src="img/gallery-small/gallery_small-4.jpg" alt="gallery" class="img-responsive gallery__img">
 				</a>
 			</div>
 			<div class="col-md-3">
-				<a data-fancybox="gallery" href="img/gallery/5.jpg">
-					<img src="img/gallery-small/gallery_small-3.jpg" alt="gallery" class="img-resposnive gallery__img">
+				<a data-fancybox="gallery" href="img/gallery/5.jpg" class="small">
+					<img src="img/gallery-small/gallery_small-3.jpg" alt="gallery" class="img-responsive gallery__img">
 				</a>
-				<a data-fancybox="gallery" href="img/gallery/7.jpg">
-					<img src="img/gallery-small/gallery_small-5.jpg" alt="gallery" class="img-resposnive gallery__img">
+				<a data-fancybox="gallery" href="img/gallery/7.jpg" class="small">
+					<img src="img/gallery-small/gallery_small-5.jpg" alt="gallery" class="img-responsive gallery__img">
 				</a>
 			</div>
 		</div>
-		<div class="row gallery__row">
+		<div class="row gallery__row d-none d-md-flex">
 			<div class="col-md-3">
-				<a data-fancybox="gallery" href="img/gallery/4.jpg">
-					<img src="img/gallery-small/gallery_small-6.jpg" alt="gallery" class="img-resposnive gallery__img">
+				<a data-fancybox="gallery" href="img/gallery/4.jpg" class="small">
+					<img src="img/gallery-small/gallery_small-6.jpg" alt="gallery" class="img-responsive gallery__img">
 				</a>
 			</div>
 			<div class="col-md-3">
-				<a data-fancybox="gallery" href="img/gallery/5.jpg">
-					<img src="img/gallery-small/gallery_small-3.jpg" alt="gallery" class="img-resposnive gallery__img">
+				<a data-fancybox="gallery" href="img/gallery/5.jpg" class="small">
+					<img src="img/gallery-small/gallery_small-3.jpg" alt="gallery" class="img-responsive gallery__img">
 				</a>
 			</div>
 			<div class="col-md-3 offset-md-3">
-				<a data-fancybox="gallery" href="img/gallery/3.jpg">
-					<img src="img/gallery-small/gallery_small-8.jpg" alt="gallery" class="img-resposnive gallery__img">
+				<a data-fancybox="gallery" href="img/gallery/3.jpg" class="small">
+					<img src="img/gallery-small/gallery_small-8.jpg" alt="gallery" class="img-responsive gallery__img">
 				</a>
 			</div>
 		</div>
-		<div class="row">
+		<div class="row d-none d-md-flex">
 			<div class="col-md-3">
 				<a data-fancybox="gallery" href="img/gallery/10.jpg">
-					<img src="img/gallery-small/gallery_small-9.jpg" alt="gallery" class="img-resposnive gallery__img">
+					<img src="img/gallery-small/gallery_small-9.jpg" alt="gallery" class="img-responsive gallery__img">
 				</a>
 			</div>
 			<div class="col-md-6">
-				<a data-fancybox="gallery" href="img/gallery/6.jpg">
-					<img src="img/gallery-small/gallery_small-10.jpg" alt="gallery" class="img-resposnive gallery__img">
+				<a data-fancybox="gallery" href="img/gallery/6.jpg" class="wide">
+					<img src="img/gallery-small/gallery_small-10.jpg" alt="gallery" class="img-responsive gallery__img">
 				</a>
 			</div>
 			<div class="col-md-3">
-				<a data-fancybox="gallery" href="img/gallery/8.jpg">
-					<img src="img/gallery-small/gallery_small-11.jpg" alt="gallery" class="img-resposnive gallery__img">
+				<a data-fancybox="gallery" href="img/gallery/8.jpg" class="small">
+					<img src="img/gallery-small/gallery_small-11.jpg" alt="gallery" class="img-responsive gallery__img">
 				</a>
 			</div>
 		</div>
 
+
+
 	</div>
 </section>
+
 </section>
+
+
 
 <section class="flyform baseform">
 	<div class="container">
 		<div class="row">
-			<div class="col-md-8 offset-md-2">
+			<div class="col-md-12 offset-md-0 col-lg-8 offset-lg-2">
 
-				<form action="send.php" class="flyform__form">
+				<form  class="flyform__form" method="POST">
 					<h2 class="flyform__title">Проверить доступность ретро-автобуса на нужную дату?</h2>
 					<input type="text" name="name" placeholder="Имя" required>
 					<input type="text" name="phone" class="phone-mask" placeholder="Номер телефона" required>
@@ -462,7 +524,7 @@
 <section id="rev">
 	<div class="container">
 		<div class="row">
-			<div class="col-md-7 offset-md-5">
+			<div class="col-md-9 offset-md-3 col-lg-7 offset-lg-5">
 
 				<h2 class="rev__title">Отзывы</h2>
 				<ul class="rev__list">
@@ -478,7 +540,8 @@
 					</li>
 					<li>
 						<img src="img/rev3.jpg" alt="avatar" class="rev__ava">
-						<p class="rev__name">Дмитро Олександрович, Вишневе</p>
+						<p class="rev__name">Дмитро, Вишневе</p>
+						<!-- <p class="rev__name">Дмитро Олександрович, Вишневе</p> -->
 						<p class="rev__review">Залишав замовлення на сайті пізно ввечері. Передзвонили зранку, узгодили час, місце, дату. Ввічлива менеджерша, професійний водій, авто подали вимите до блиску, усе як по нотах. Приємно що бензин входить у вартість. Нічого поганого сказати не можу, можна замовляти.</p>
 					</li>
 					<li>
@@ -529,9 +592,9 @@
 <section class="flyform">
 	<div class="container">
 		<div class="row">
-			<div class="col-md-8 offset-md-2">
+			<div class="col-md-12 offset-md-0 col-lg-8 offset-lg-2">
 
-				<form action="send.php" class="flyform__form">
+				<form  class="flyform__form" method="POST">
 					<h2 class="flyform__title">Проверить доступность ретро-автобуса на нужную дату?</h2>
 					<input type="text" name="name" placeholder="Имя" required>
 					<input type="text" name="phone" class="phone-mask" placeholder="Номер телефона" required>
@@ -547,12 +610,12 @@
 <section id="present">
 	<div class="container">
 		<div class="row">
-			<div class="col-md-5">
+			<div class="col-sm-12 col-md-5">
 
 				<img src="img/present__img.png" alt="photos" class="present__img">
 
 			</div>
-			<div class="col-md-7">
+			<div class="col-sm-12 col-md-7">
 
 				<h2 class="title present">Незабываемый праздник</h2>
 				<p class="present__text">Легендарный Volkswagen T2, он же Bulli, придаст ярких красок вашему мероприятию! <span> T2 - это икона эпохи хиппи и рока, жажды свободы и приключений. Подарите себе эмоции позитива и неповторимые кадры на всю жизнь.</span></p>
@@ -614,9 +677,9 @@
 <section class="flyform baseform">
 	<div class="container">
 		<div class="row">
-			<div class="col-md-8 offset-md-2">
+			<div class="col-md-12 offset-md-0 col-lg-8 offset-lg-2">
 
-				<form action="send.php" class="flyform__form">
+				<form  class="flyform__form" method="POST">
 					<h2 class="flyform__title">Проверить доступность ретро-автобуса на нужную дату?</h2>
 					<input type="text" name="name" placeholder="Имя" required>
 					<input type="text" name="phone" class="phone-mask" placeholder="Номер телефона" required>
@@ -632,31 +695,31 @@
 <footer>
 	<div class="container">
 		<div class="row">
-			<div class="col-md-3">
+			<div class="col-md-6 col-lg-3">
 
 				<h3 class="footer__subtitle">Звоните</h3>
 				<a href="tel:+380952167315" class="footer__text">+38 (095) 216-73-15</a>
 				
 			</div>
-			<div class="col-md-3">
+			<div class="col-md-6 col-lg-3">
 				
 				<h3 class="footer__subtitle">Пишите</h3>
 				<a href="mailto:info@prokatlimuzinov.com" class="footer__text">info@prokatlimuzinov.com</a>
 				
 			</div>
-			<div class="col-md-3">
+			<div class="col-md-6 col-lg-3">
 
 				<h3 class="footer__subtitle">Мы работаем</h3>
 				<p class="footer__text">без выходных с 9.00-21.00</a>
 				
 			</div>
-			<div class="col-md-3">
+			<div class="col-md-6 col-lg-3">
 
 				<h3 class="footer__subtitle">Мы в соцсетях</h3>
 				<ul class="footer__social">
-					<li><a href="//t.me/Prokat_limuzinov" target="_blank"><img src="img/facebook.svg" alt="social icon"></a></li>
+					<li><a href="//www.facebook.com/ProkatLimuzinov/" target="_blank"><img src="img/facebook.svg" alt="social icon"></a></li>
 					<li><a href="//www.instagram.com/prokat_limuzinov_com/" target="_blank"><img src="img/instagram.svg" alt="social icon"></a></li>
-					<li><a href="#" target="_blank"><img src="img/telegram.svg" alt="social icon"></a></li>
+					<li><a href="//t.me/Prokat_limuzinov" target="_blank"><img src="img/telegram.svg" alt="social icon"></a></li>
 				</ul>
 
 			</div>
@@ -664,14 +727,14 @@
 		<div class="row">
 			<div class="col">
 
-				<p class="footer__copywrite">Проект принадлежит: Компания <a href="#">Prokat Limuzinov</a></p>
+				<p class="footer__copywrite">Проект принадлежит: <span>Компания <a href="//prokatlimuzinov.com/" target="_blank">Prokat Limuzinov</a></span></p>
 
 			</div>
 		</div>
 	</div>
 </footer>
 
--->
+
 
 
 	<!--[if lt IE 9]>
@@ -694,14 +757,14 @@
 	<script src="js/common.js"></script>
 
 
-<div class="modal animated zoomIn " id="modal__order" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal animated zoomIn1 rollIn1 rotateIn " id="modal__order" tabindex="-1" role="dialog" aria-hidden="true">
 	<div class="modal-dialog" role="document">
     	<div class="modal-content">
 
 			<button type="button" class="close" data-dismiss="modal" >&times;</button>
 			
 			<h3 class="modal__title">Проверить доступность <br>ретро-автобуса на нужную дату?</h3>
-			<form action="send.php" method="POST" class="modal__form">
+			<form class="modal__form" method="POST">
 				<input type="text" name="name" placeholder="Имя" required>
 				<input type="text" name="phone" class="phone-mask" placeholder="Номер телефона" required>
 				<button type="submit" class="btn">Оставить заявку</button>
@@ -710,6 +773,20 @@
     	</div>
 	</div>
 </div>
+
+<div class="modal animated zoomInRight1 2rollIn rotateIn" id="modal__ok" tabindex="-1" role="dialog" aria-hidden="true">
+	<div class="modal-dialog ok" role="document">
+    	<div class="modal-content ok">
+
+			<img src="img/check-circle.svg" alt="check-circle" class="modal__done">
+			<h3 class="modal__title ok">Заявка принята!</h3>
+			<p class="modal__text1">Менеджер свяжется с вами <br>в ближайшее время.</p>
+			<button class="modal__close" class="close" data-dismiss="modal" >Вернуться к сайту</button>
+
+    	</div>
+	</div>
+</div>
+
 
 </body>
 </html>

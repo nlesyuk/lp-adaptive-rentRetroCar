@@ -30,33 +30,48 @@
 
 #mobile-menu
 	position: fixed
+	background-color: $yellow
 	background-color: white
 	z-index: 10
 	.menu_list
-		background: white
 		padding-top: 20px
 		padding-left: 25px
 		li
 			margin-bottom: 10px
+			display: flex
+			align-items: center
 			a
 				display: block
-				background: white
 				box-sizing: border-box
 				padding: 10px 0
-				font: 1.125em/1em  $font
+				font: bold 1.125em/1em  $font
+				letter-spacing: 1.2px
 				text-transform: uppercase
 				text-decoration: none
 				color: #000
+				&.telegram,
+				&.menu__phone
+					display: inline-block
+				&.telegram
+					width: 40px
+				&.menu__phone
+					width: calc(100% - 50px)
+				&.menu__email
+					font: 1em/1em $font3
+					text-transform: lowercase
+					letter-spacing: 0px
 			button
-				background: $accent
+				display: block
+				background: white
+				background: $yellow
 				min-height: 50px
 				border: none
+				border-radius: 5px
 				width: calc(100% - 25px)
 				height: 100%
 				padding: 0 20px
 				font: 1.125em/1em  $font
 				text-align: center
-				color: white
 
 // sections start
 
@@ -84,6 +99,7 @@
 			// justify-content: flex-start
 			// align-items: center
 			display: block
+			cursor: default
 			img
 				display: block
 				width: 100%
@@ -204,6 +220,9 @@
 						color: $black
 						background: white
 						border-bottom: 1px solid #e5eaf3
+					img
+						position: relative
+						top: 3px
 					.accent
 						font: bold 1.25rem/1 $font3
 						text-align: center
@@ -388,13 +407,14 @@
 	.title
 		margin-bottom: 24px
 	.gallery__text
-		font: bold 1.125rem/1.4 $font
+		font: 1.125rem/1.4 $font3
 		text-align: center
 		color: $grey
+		margin-bottom: 40px
 	.gallery__img
 		margin-bottom: 24px
 	.gallery__row
-		margin-top: -330px
+		margin-top: -318px
 
 
 #rev
@@ -530,7 +550,7 @@
 			bottom: 0
 			pointer-events: none
 		&.opened
-			// height: auto
+			height: auto
 			// height: 350px
 			&:before
 				display: none
@@ -712,6 +732,8 @@ footer
 
 
 .modal
+	.modal-dialog.ok
+		max-width: 480px
 	.modal-content
 		border-radius: 0px
 		padding: 0%
@@ -719,6 +741,8 @@ footer
 		position: relative
 		z-index: 9999
 		padding: 24px
+		&.ok
+			border-radius: 8px
 		.close
 			display: block
 			width: 35px
@@ -735,6 +759,28 @@ footer
 			opacity: 1
 			&:hover
 				opacity: .6
+		.modal__done
+			margin-bottom: 24px
+		.modal__text1
+			font: 1.125rem/1.5 $font3
+			text-align: center
+			color: $black
+			margin-bottom: 24px
+		.modal__close
+			width: 188px
+			margin: 0 auto
+			padding: 12px 0
+			border-radius: 4px
+			background: transparent
+			border: 1px solid $brightBlue3
+			font: bold .75rem/1.25 $font3
+			text-transform: uppercase
+			text-align: center
+			color: $grey
+			cursor: pointer
+			&:hover
+				border: 1px solid $accent
+				color: $accent
 		.modal__title
 			display: block
 			width: 100%
@@ -742,6 +788,11 @@ footer
 			text-align: center
 			color: $black
 			margin-bottom: 24px
+			&.ok
+				font: bold 1.125rem/1.25 $font3
+				text-align: center
+				color: $black
+				margin-bottom: 8px
 		.modal__form
 			display: block
 			width: 100%
@@ -760,9 +811,21 @@ footer
 				letter-spacing: 1px
 				color: white
 				padding: 12px
+
+
+
+
+
+
+
+
+
+
+
 @media (min-width: 1200.98px)
 	.container
 		max-width: 1296px
+
 
 @media (max-width: 1200.98px)
 	#first
@@ -782,8 +845,87 @@ footer
 		// .btn
 
 
+	#done
+		padding: 40px 0
+		&:before
+			content: ""
+			width: 50%
+			height: calc(100% - 80px)
+			background: url(../img/bitmap.png) no-repeat 58% 0%/contain
+			position: absolute
+			top: 40px
+			right: 50%
+		&:after
+			content: ""
+			display: block
+			width: 50%
+			height: calc(100% - 80px)
+			background: url(../img/success__img@2x.jpg) no-repeat center center/cover $yellow
+			position: absolute
+			top: 40px
+			right: 0
+		.done__title
+			margin-top: 48px
+			font: bold 4.5rem/1.15 $font
+			margin-bottom: 24px
+			position: relative
+			z-index: 5
+		.btn
+			margin-bottom: 48px
+
+
+	#gallery
+		padding: 40px 0
+		.title
+			margin-bottom: 24px
+		.gallery__text
+			font: 1.125rem/1.4 $font3
+			margin-bottom: 40px
+		.gallery__img
+			margin-bottom: 24px
+		.gallery__row
+			margin-top: -234px
+		.big,
+		.small,
+		.tol,
+		.wide
+			display: block
+			width: 100%
+		.big
+			width: 100%
+			height: 444px
+			overflow: hidden
+
+
+	#present
+		padding: 40px 0 
+		background: url(../img/present__decorator2.png) no-repeat 50% 100% / auto
+		&:before
+			content: url(../img/present__decorator1.png)
+			position: absolute
+			right: 20%
+			top: -50px
+		.container
+			position: relative
+			z-index: 5
+		.title.present
+			font-size: 3.5rem
+			text-align: left
+			margin-top: 40px
+			margin-bottom: 24px
+		.present__text
+			font: 1.5rem/1.25 $font3
+		.present__img
+			display: block
+			width: calc(100% + 90px)
+
+
 // md
 @media (max-width: 992.98px)
+	.title
+		font: bold 2em/1em $font
+		text-align: center
+
 	#first
 		z-index: 2
 		header
@@ -832,6 +974,194 @@ footer
 				margin-bottom: 24px
 			.first__text3
 				font: 1rem/1 $font
+
+
+	#price
+		padding: 80px 0
+
+
+	.flyform
+		padding-bottom: 80px
+		&.baseform
+			padding: 40px 0
+		.flyform__form
+			margin-top: -70px
+			padding: 24px
+			.flyform__title
+				font: bold 1.25rem/1.25 $font
+				margin-bottom: 24px
+			input
+				width: calc(100% / 3 - 16px)
+				padding: 10px 12px
+				font: .75rem/1.125 $font3
+			button
+				width: calc(100% / 3 - 16px)
+				font: bold .75em/1em $font2
+				padding: 10px 0
+
+
+	#clip
+		padding: 40px 0
+		.title
+			margin-bottom: 40px
+		.clip__list
+			display: flex
+			justify-content: space-between
+			flex-wrap: wrap
+			li
+				width: calc(100% / 2 - 10px)
+				margin-bottom: 24px
+			.clip__name
+				margin-top: 16px
+				font: .87rem/1.25 $font3
+
+
+	#done
+		padding: 40px 0
+		&:before
+			content: ""
+			width: 50%
+			height: calc(100% - 80px)
+			background: url(../img/bitmap.png) no-repeat 58% 0%/contain
+			position: absolute
+			top: 40px
+			right: 50%
+		&:after
+			content: ""
+			display: block
+			width: 50%
+			height: calc(100% - 80px)
+			background: url(../img/success__img@2x.jpg) no-repeat center center/cover $yellow
+			position: absolute
+			top: 40px
+			right: 0
+		.done__title
+			margin-top: 48px
+			font: bold 3rem/1.15 $font
+			margin-bottom: 24px
+			position: relative
+			z-index: 5
+		.btn
+			margin-bottom: 48px
+
+
+	#gallery
+		padding: 40px 0
+		.title
+			margin-bottom: 24px
+		.gallery__text
+			font: 1.125rem/1.4 $font3
+			margin-bottom: 40px
+		.gallery__img
+			margin-bottom: 16px
+		.gallery__row
+			margin-top: -164px
+		.big
+			width: 100%
+			height: 316px
+			overflow: hidden
+		.wide
+			height: 150px
+			width: 100%
+			overflow: hidden
+		.tol
+			height: 315px
+			margin-bottom: 14px
+			background: url(../img/gallery-small/gallery_small-4.jpg) no-repeat top center/cover
+			img
+				display: none
+
+
+	#rev
+		background: url(../img/rev__lines.png) no-repeat top center/contain white
+		&:before
+			content: ""
+			width: 40%
+			height: 100%
+			height: calc(100% - 160px)
+			background: url(../img/rev__img.jpg) no-repeat 50% 0%/cover
+			position: absolute
+			top: 0px
+			top: 80px
+			right: 60%
+		.rev__title
+			margin-top: 48px
+			font: bold 3.5rem/1.15 $font
+			margin-bottom: 40px
+		.rev__list
+			li
+				display: flex
+				justify-content: flex-start
+				align-items: center
+				flex-wrap: wrap
+				padding: 24px
+				margin-bottom: 24px
+				.rev__ava
+					margin-right: 16px
+				.rev__name
+					font: .87rem/1 $font3
+				.rev__review
+					font: 1rem/1.5 $font3
+					margin-left: 56px
+
+
+	#how
+		padding: 80px 0 152px
+		.title
+			margin-bottom: 62px
+		.how__list
+			li
+				width: calc(100% / 4 )
+				&:before
+					display: none
+			.how__img
+				margin-bottom: 32px
+			.how__text
+				font: 1rem/1.5 $font3
+				text-align: center
+
+
+	#present
+		padding: 40px 0 
+		background: url(../img/present__decorator2.png) no-repeat 50% 100% / auto
+		&:before
+			display: none
+		.container
+			position: relative
+			z-index: 5
+		.title.present
+			font-size: 2rem
+			text-align: left
+			margin-top: 40px
+			margin-bottom: 24px
+		.present__text
+			font: 1.25rem/1.25 $font3
+		.present__img
+			display: block
+			width: calc(100% + 60px)
+
+
+	footer
+		padding: 196px 0 40px 0
+		.footer__subtitle
+			font: 1.5rem/1.25 $font
+			margin-bottom: 18px
+		.footer__text
+			font: 1.125rem/1.5 $font
+			margin-bottom: 40px
+		.footer__social
+			display: flex
+			justify-content: flex-start
+			li
+				margin-right: 24px
+				&:last-child
+					margin-right: 0px
+				a 
+					img
+						border-radius: 5px
+		.footer__copywrite
+			margin-top: 138px
+			font: .87rem/1.125 $font3
 
 
 	#owl_slider
@@ -901,6 +1231,190 @@ footer
 			left: 0
 			z-index: 1
 
+
+	#clip
+		padding: 40px 0
+		.title
+			margin-bottom: 40px
+		.clip__list
+			display: flex
+			justify-content: space-between
+			flex-wrap: wrap
+			li
+				width: 100%
+				margin-bottom: 24px
+			.clip__name
+				margin-top: 16px
+				font: .87rem/1.25 $font3
+
+
+	#done
+		padding: 40px 0
+		&:before
+			content: ""
+			// display: none
+			width: 90%
+			height: calc(100% - 80px)
+			background: url(../img/bitmap.png) no-repeat 58% 0%/contain
+			position: absolute
+			top: 40px
+			right: 5%
+		&:after
+			display: none
+		.done__title
+			margin-top: 48px
+			font: bold 2.5rem/1.15 $font
+			margin-bottom: 24px
+			position: relative
+			z-index: 5
+		.btn
+			margin-bottom: 48px
+
+
+	#gallery
+		padding: 40px 0
+		.title
+			margin-bottom: 24px
+		.gallery__text
+			font: 1.125rem/1.4 $font3
+			margin-bottom: 40px
+		.gallery__img
+			margin-bottom: 16px
+		.gallery__row
+			margin-top: -164px
+		.big
+			width: 100%
+			height: 316px
+			overflow: hidden
+		.wide
+			height: 150px
+			width: 100%
+			overflow: hidden
+		.tol
+			height: 315px
+			margin-bottom: 14px
+			background: url(../img/gallery-small/gallery_small-4.jpg) no-repeat top center/cover
+			img
+				display: none
+
+
+	.flyform
+		padding: 40px 0
+		.flyform__form
+			margin-top: -70px
+			padding: 24px
+			.flyform__title
+				font: bold .87rem/1.25 $font
+				margin-bottom: 24px
+			input
+				width: 100%
+				padding: 10px 12px
+				font: .75rem/1.125 $font3
+				margin-bottom: 16px
+			button
+				width: 100%
+				font: bold .75em/1em $font2
+				padding: 10px 0
+
+
+	#rev
+		padding: 80px 0 0 0
+		background: url(../img/rev__lines.png) no-repeat top center/contain white
+		&:before
+			content: ""
+			display: none
+			width: 40%
+			height: 100%
+			height: calc(100% - 160px)
+			background: url(../img/rev__img.jpg) no-repeat 50% 0%/cover
+			position: absolute
+			top: 0px
+			top: 80px
+			right: 60%
+		.rev__title
+			margin-top: 0px
+			font: bold 2.5rem/1.15 $font
+			margin-bottom: 40px
+		.rev__list
+			li
+				display: flex
+				justify-content: flex-start
+				align-items: center
+				flex-wrap: wrap
+				padding: 24px
+				margin-bottom: 24px
+				.rev__ava
+					margin-right: 16px
+				.rev__name
+					font: .87rem/1 $font3
+				.rev__review
+					font: 1rem/1.5 $font3
+					margin-left: 56px
+
+
+	#how
+		padding: 40px 0 80px 0
+		.title
+			margin-bottom: 40px
+		.how__list
+			flex-wrap: wrap
+			li
+				width: calc(100% / 2 )
+				margin-bottom: 40px
+			.how__img
+				margin-bottom: 32px
+			.how__text
+				font: 1rem/1.5 $font3
+
+
+	#present
+		padding: 40px 0 
+		background: white
+		&:before
+			display: none
+		.container
+			position: relative
+			z-index: 5
+		.title.present
+			font-size: 2rem
+			text-align: left
+			margin-top: 40px
+			margin-bottom: 24px
+		.present__text
+			font: 1.5rem/1.25 $font3
+		.present__img
+			display: block
+			width: calc(100% + 30px)
+			margin-left: -15px
+
+
+	footer
+		padding: 40px 0
+		.footer__subtitle
+			font: 1.5rem/1.25 $font
+			margin-bottom: 18px
+		.footer__text
+			font: 1.125rem/1.5 $font
+			margin-bottom: 40px
+		.footer__social
+			display: flex
+			justify-content: flex-start
+			li
+				margin-right: 24px
+				&:last-child
+					margin-right: 0px
+				a 
+					img
+						border-radius: 5px
+		.footer__copywrite
+			margin-top: 40px
+			font: .87rem/1.5 $font3
+			text-align: left
+			span
+				display: block
+			a
+				text-decoration: none
+
 // xs
 @media (max-width: 576.98px)
 	#first
@@ -942,7 +1456,6 @@ footer
 		.btn
 			margin-bottom: 24px
 	#eggs
-		padding: 52px 0 40px 0
 		.eggs__list
 			justify-content: space-between
 			flex-wrap: wrap
@@ -969,3 +1482,70 @@ footer
 			.first__text3
 				// width: 70%
 				font: 1rem/1 $font
+
+
+	#price
+		padding: 80px 0
+		.price__table
+			width: 100%
+			thead
+				width: 100%
+				tr
+					width: 100%
+					height: 86px
+				th
+					width: 100%
+					position: relative
+					background: white
+					img
+						position: absolute
+						bottom: 0
+						left: calc(50% - 116px)
+			tbody
+				width: 100%
+				background: white
+				tr
+					width: 100%
+					&:first-child
+						td 
+							padding-top: 36px
+					&:last-child
+						td 
+							padding-bottom: 24px
+					td
+						text-align: center
+						position: relative
+						padding: 16px 24px
+						&:before
+							content: ""
+							display: block
+							width: 80%
+							height: 1px
+							background: #e5eaf3
+							position: absolute
+							left: 10%
+							bottom: 0px
+							z-index: 1
+						.price__title
+							font: 1rem/1.25 $font3
+							text-align: center
+							color: black
+							margin-bottom: 8px
+							img
+								position: relative
+								top: 3px
+						.general
+							display: inline-block
+							width: 49%
+							font: 1rem/1.25 $font3
+							text-align: center
+							color: black
+							margin-bottom: 8px
+						.accent
+							display: inline-block
+							width: 49%
+							font: bold 1.25rem/1 $font3
+							text-align: center
+							color: $yellow
+							padding: 0 0 8px 0
+
