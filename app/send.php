@@ -32,7 +32,7 @@ $text .= '<div>'
 		. '<h2>Поступил новый заказ</h2>'
 		. '<div>От: '.$Name.'</div>'
 		. '<div>Телефон: '.$Phone.'</div>'
-		. '<div>Услуга: ".$FromName ."</div>'
+		. '<div>Услуга: '.$FromName .'</div>'
 		. '</div>';
 
 if(isset($_POST) && !empty($_POST)){

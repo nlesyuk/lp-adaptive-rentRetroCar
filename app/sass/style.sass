@@ -87,6 +87,7 @@
 		position: absolute
 		left: calc(50% - 420px)
 		z-index: 3
+		z-index: -1
 	.container
 		position: relative
 		z-index: 5
@@ -94,10 +95,6 @@
 		width: 100%
 		padding: 32px 0
 		.first__logo
-			// display: flex
-			// height: 100%
-			// justify-content: flex-start
-			// align-items: center
 			display: block
 			cursor: default
 			img
@@ -385,7 +382,7 @@
 		display: block
 		width: 50%
 		height: calc(100% - 80px)
-		background: url(../img/success__img@2x.jpg) no-repeat center center/cover $yellow
+		background: url(../img/success__img@2x.jpg) no-repeat 50% 68%/cover $yellow
 		position: absolute
 		top: 40px
 		right: 0
@@ -430,6 +427,7 @@
 		height: 100%
 		height: calc(100% - 160px)
 		background: url(../img/rev__img.jpg) no-repeat 100% 0%/contain
+		background: url(../img/rev__img@2x.jpg) no-repeat 50% 50%/cover
 		position: absolute
 		top: 0px
 		top: 80px
@@ -449,17 +447,31 @@
 			background: white
 			box-shadow: 0 8px 16px 0 rgba(6, 49, 106, 0.1)
 			margin-bottom: 24px
+			position: relative
+			&:before
+				content: "“"
+				font: bold 14rem/1 $font3
+				color: $brightBlue2
+				position: absolute
+				top: -10px
+				left: 0
+				z-index: 1
 			.rev__ava
 				display: block
 				margin-right: 16px
+				position: relative
+				z-index: 2
 			.rev__name
 				font: .87rem/1 $font3
 				color: $grey
+				position: relative
+				z-index: 2
 			.rev__review
 				font: 1rem/1.5 $font3
 				color: $black
 				margin-left: 56px
-
+				position: relative
+				z-index: 2
 
 #how
 	width: 100%
@@ -635,12 +647,33 @@ footer
 	width: 100%
 	height: auto
 	position: relative
+	&:before
+		content: ""
+		display: none
+		width: 100%
+		height: 100%
+		background: rgba(255,255,255,.4)
+		position: absolute
+		top: 0
+		bottom: 0
+		z-index: 3
 #owl_slider
 	position: relative
 	z-index: 2
 	&.owl-carousel
 		.owl-stage-outer 
 			width: 100%
+			position: relative
+			&:before
+				content: ""
+				display: block
+				width: 100%
+				height: 100%
+				background: transparent
+				position: absolute
+				top: 0
+				bottom: 0
+				z-index: 3
 		.owl-nav
 			display: block
 			width: 160px
@@ -650,7 +683,7 @@ footer
 			right: 0
 			display: flex
 			justify-content: space-between
-			pointer-events: none 
+			pointer-events: none
 			.owl-prev,
 			.owl-next
 				position: relative
@@ -660,6 +693,7 @@ footer
 				border: 1px solid white
 				background: white
 				pointer-events: auto
+				z-index: 60
 				&:before
 					content: url(../img/slider__arrow.svg)
 					display: block
@@ -782,7 +816,7 @@ footer
 				border: 1px solid $accent
 				color: $accent
 		.modal__title
-			display: block
+			dсссссссссisplay: block
 			width: 100%
 			font: bold 1.5rem/1.25 $font
 			text-align: center
@@ -802,8 +836,10 @@ footer
 				border: 1px solid $brightBlue3
 				padding: 10px 12px
 				font: .87rem/1.125 $font3
-				color: $brightBlue4
+				color: $black
 				margin-bottom: 16px
+				&:placeholder
+					color: $brightBlue4
 			button[type=submit]
 				display: block
 				width: 100%
@@ -811,6 +847,7 @@ footer
 				letter-spacing: 1px
 				color: white
 				padding: 12px
+				cursor: pointer
 
 
 
