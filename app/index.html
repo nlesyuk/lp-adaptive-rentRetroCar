@@ -56,22 +56,26 @@
 <div id="mobile-menu" class="touch-menu-la">
 	<nav>
 		<ul class="menu_list">
-			<li><a href="#g" class="scroll">Галерея</a></li>
 			<li><a href="#price" class="scroll">Стоимость</a></li>
+			<li><a href="#rev" class="scroll">Отзывы</a></li>
 			<li><a href="#rules" class="scroll">Правила аренды</a></li>
-			<li>
-				<p class="first__location d-none d-md-block"><a href="#" class="active">ua</a> / <a href="#">ru</a></p>
-			</li>
 			<li></li>
 			<li><button data-toggle="modal" data-target="#modal__order">Оставить заявку</button></li>
 			<li>
-				<a href="//t.me/Prokat_limuzinov" class="telegram">
+				<a href="//t.me/Prokat_limuzinov" class="telegram" target="_blank">
 					<img src="img/telegramtop.svg" alt="telegram" >
 				</a>
 				<a href="tel:+380952167315" class="menu__phone">+38 (095) 216-73-15</a>
 			</li>
 			<li>
 				<a href="mailto:info@prokatlimuzinov.com" class="menu__email">info@prokatlimuzinov.com</a>
+			</li>
+			<li>
+				<div class="mobile__location">
+					<a href="/ua" >ua</a>
+					/
+					<a href="/" class="active">ru</a>
+				</div>
 			</li>
 		</ul>
 	</nav>
@@ -105,7 +109,7 @@
 					</button>
 
 					<ul class="first__list d-none d-md-flex">
-						<li><a href="//t.me/Prokat_limuzinov"><img src="img/telegramtop.svg" alt="telegram"></a></li>
+						<li><a href="//t.me/Prokat_limuzinov" target="_blank"><img src="img/telegramtop.svg" alt="telegram"></a></li>
 						<li><a href="tel:+380952167315"><img src="img/phone.svg" alt="phone"></a></li>
 						<li><a href="tel:+380952167315">+38 (095) 216-73-15</a></li>
 					</ul>
@@ -195,12 +199,12 @@
 </section>
 
 
-<section id="price" data-aos="fade-up">
+<section id="price">
 	<div class="container">
 		<div class="row">
 			<div class="col-12 col-md-12 offset-md-0 col-lg-8 offset-lg-2">
 
-				<table class="price__table d-none d-sm-table">
+				<table class="price__table d-none d-sm-table" data-aos="fade-up">
 					<thead>
 						<tr>
 							<th>&nbsp;</th>
@@ -219,7 +223,7 @@
 							<td><span class="accent">500 грн</span></td>
 						</tr>
 						<tr>
-							<td>Стоимость подачи авто на локацию <img src="img/help-circle-fill2.svg" alt="help" title="Подготовка авто к заказу: мойка и уборка салона, расходы по доставке авто на локацию"></td>
+							<td>Стоимость подачи авто на локацию <span  class="price__tooltip" data-title="Стоимость услуги состоит из - затраченного времени на доставку авто, расходов на топливо и обслуживание авто перед заказом."><img src="img/help-circle-fill2.svg" alt="help" ></span></td>
 							<td>450 грн</td>
 							<td>500 грн</td>
 						</tr>
@@ -246,7 +250,7 @@
 					</tbody>
 				</table>
 
-				<table class="price__table d-table d-sm-none">
+				<table class="price__table d-table d-sm-none" data-aos="fade-up">
 					<thead>
 						<tr>
 							<th>
@@ -264,23 +268,25 @@
 						</tr>
 						<tr>
 							<td>
-								<p class="price__title">Стоимость подачи авто на локацию <img src="img/help-circle-fill.svg" alt="help" title="Подготовка авто к заказу: мойка и уборка салона, расходы по доставке авто на локацию"></p>
+								<p class="price__title">Стоимость подачи авто на локацию 
+									<span  class="price__tooltip" data-title="Стоимость услуги состоит из - затраченного времени на доставку авто, расходов на топливо и обслуживание авто перед заказом.">
+									<img src="img/help-circle-fill.svg" alt="help" title="Стоимость услуги состоит из - затраченного времени на доставку авто, расходов на топливо и обслуживание авто перед заказом."></span></p>
 								<span class="general">450 грн</span>
-								<span class="general">450 грн</span>
+								<span class="general">500 грн</span>
 							</td>
 						</tr>
 						<tr>
 							<td>
 								<p class="price__title">Стоимость выезда авто за город <br>(до 20 км от КПП)</p>
 								<span class="general">450 грн</span>
-								<span class="general">450 грн</span>
+								<span class="general">500 грн</span>
 							</td>
 						</tr>
 						<tr>
 							<td>
 								<p class="price__title">Количество посадочных мест</p>
-								<span class="general">450 грн</span>
-								<span class="general">450 грн</span>
+								<span class="general">4</span>
+								<span class="general">6</span>
 							</td>
 						</tr>
 						<tr>
@@ -307,7 +313,7 @@
 </section>
 
 
-<section class="flyform">
+<section class="flyform" data-aos="fade-up">
 	<div class="container">
 		<div class="row">
 			<div class="col-md-12 offset-md-0 col-lg-8 offset-lg-2">
@@ -332,9 +338,9 @@
 		<div class="row">
 			<div class="col">
 
-				<h2 class="title">Ретро-автобусы в видеоклипах</h2>
+				<h2 class="title" data-aos="fade-up">Ретро-автобусы в видеоклипах</h2>
 
-				<ul class="clip__list">
+				<ul class="clip__list" data-aos="fade-up">
 					<li>
 						<div class="video">
 							<a class="video__link" href="https://youtu.be/MCtB8MrIMNw">
@@ -400,12 +406,12 @@
 </section>
 
 
-<section id="done">
+<section id="done" data-aos="fade-up">
 	<div class="container">
 		<div class="row">
-			<div class="col-md-6">
+			<div class="col-md-6" data-aos="fade-up" data-aos-delay="300">
 				
-				<h2 class="done__title">Успешно выполнено более 150 заказов</h2>
+				<h2 class="done__title" >Успешно выполнено более 150 заказов</h2>
 				<a href="javascript:void(0)" class="btn" data-toggle="modal" data-target="#modal__order">Оставить заявку</a>
 				
 			</div>
@@ -414,10 +420,10 @@
 </section>
 
 
-<section id="gallery" id="g">
+<section id="gallery">
 	<div class="container">
 		<div class="row">
-			<div class="col">
+			<div class="col" data-aos="fade-up">
 				
 				<h2 class="title">All You Need Is Love!</h2>
 				<p class="gallery__text">Незабываемая фотосессия с участием ретро-автобусов</p>
@@ -425,7 +431,7 @@
 			</div>
 		</div>
 
-		<div class="row ">
+		<div class="row" data-aos="fade-up">
 			<div class="col">
 
 				<img src="img/gallery_xs.png" alt="gallery" class="img-responsive gallery__img d-block d-md-none">
@@ -506,7 +512,7 @@
 		<div class="row">
 			<div class="col-md-12 offset-md-0 col-lg-8 offset-lg-2">
 
-				<form  class="flyform__form" method="POST"  autocomplete="off">
+				<form  class="flyform__form" method="POST"  autocomplete="off" data-aos="zoom-out-up">
 					<h2 class="flyform__title">Проверить доступность ретро-автобуса на нужную дату?</h2>
 					<input type="text" name="name" placeholder="Имя" required>
 					<input type="text" name="phone" class="phone-mask" placeholder="Номер телефона" required>
@@ -519,33 +525,32 @@
 </section>
 
 
-<section id="rev">
+<section id="rev" data-aos="fade-right">
 	<div class="container">
 		<div class="row">
 			<div class="col-md-9 offset-md-3 col-lg-7 offset-lg-5">
 
-				<h2 class="rev__title">Отзывы</h2>
+				<h2 class="rev__title" data-aos="fade-up">Отзывы</h2>
 				<ul class="rev__list">
-					<li>
-						<img src="img/rev1.jpg" alt="avatar" class="rev__ava">
+					<li data-aos="fade-up">
+						<img src="img/rev1.png" alt="avatar" class="rev__ava">
 						<p class="rev__name">Марина, Киев</p>
-						<p class="rev__review">Очень рекомендую. Заказывала у ребят желтенький автобусик для свадебного фотосета. Была очень довольна сервисом и внимательностью к деталям. Плохо, что на нужное мне время было занято и пришлось передоговориться с фотографом. Но фото результат того стоял однозначно.</p>
+						<p class="rev__review">Очень рекомендую. Заказывала у ребят желтенький автобусик для свадебного фотосета. Была очень довольна сервисом и внимательностью к деталям. К сожалению, на нужное мне время было занято и пришлось согласовать другое время с фотографом. Но фото результат того стоит однозначно!</p>
 					</li>
-					<li>
-						<img src="img/rev2.jpg" alt="avatar" class="rev__ava">
+					<li data-aos="fade-up">
+						<img src="img/rev2.png" alt="avatar" class="rev__ava">
 						<p class="rev__name">Світлана, Ірпінь</p>
-						<p class="rev__review">Побачила фотки з весілля подруги з жовтеньким автобусом і захотіла собі такі самі. Але жовтий автобус був зайнятий, взяла голубий. Дуже сподобалось усе, тож буду вас рекомендувати подругам.</p>
+						<p class="rev__review">Побачила фото з весілля подруги з жовтим автобусом і захотіла собі такі самі, але обрала голубий. Дуже сподобалось усе, тож буду вас рекомендувати подругам.</p>
 					</li>
-					<li>
-						<img src="img/rev3.jpg" alt="avatar" class="rev__ava">
+					<li data-aos="fade-up">
+						<img src="img/rev3.png" alt="avatar" class="rev__ava">
 						<p class="rev__name">Дмитро, Вишневе</p>
-						<!-- <p class="rev__name">Дмитро Олександрович, Вишневе</p> -->
-						<p class="rev__review">Залишав замовлення на сайті пізно ввечері. Передзвонили зранку, узгодили час, місце, дату. Ввічлива менеджерша, професійний водій, авто подали вимите до блиску, усе як по нотах. Приємно що бензин входить у вартість. Нічого поганого сказати не можу, можна замовляти.</p>
+						<p class="rev__review">Залишав замовлення на сайті пізно ввечері. Передзвонили зранку, узгодили час, місце, дату. Ввічлива менеджерша, професійний водій, авто подали вимите до блиску, усе як по нотах. Приємно, що бензин входить у вартість. Нічого поганого сказати не можу, можна замовляти.</p>
 					</li>
-					<li>
-						<img src="img/rev.jpg" alt="avatar" class="rev__ava">
+					<li data-aos="fade-up">
+						<img src="img/rev.png" alt="avatar" class="rev__ava">
 						<p class="rev__name">Тетяна, Київ</p>
-						<p class="rev__review">Дуже сподобалось усе, тож буду вас рекомендувати подругам. Ввічлива менеджерша, професійний водій, авто подали вимите до блиску, усе як по нотах. Побачила фотки з весілля подруги з жовтеньким автобусом і захотіла собі такі самі. Але жовтий автобус був зайнятий, взяла голубий. </p>
+						<p class="rev__review">Дякую! Все дуже сподобалось. Замовляли синій автобус, з подачею в інше місто, на наше весілля. Все пройшло відмінно, приїхали вчасно, відвезли на місце фотосесії і потім в ресторан. Дуже вдячна!</p>
 					</li>
 				</ul>
 
@@ -560,22 +565,22 @@
 		<div class="row">
 			<div class="col">
 
-				<h2 class="title black">Как оформить заказ:</h2>
+				<h2 class="title black" data-aos="fade-up">Как оформить заказ:</h2>
 
 				<ul class="how__list">
-					<li>
+					<li data-aos="fade-up-right" data-aos-delay="100">
 						<img src="img/how__icon1.png" alt="icon" class="how__img">
 						<p class="how__text">Оставляете заявку</p>
 					</li>
-					<li>
+					<li data-aos="fade-up-right" data-aos-delay="200">
 						<img src="img/how__icon2.png" alt="icon" class="how__img">
 						<p class="how__text">Согласовываем дату и время</p>
 					</li>
-					<li>
+					<li data-aos="fade-up-right" data-aos-delay="300">
 						<img src="img/how__icon3.png" alt="icon" class="how__img">
 						<p class="how__text">Вносите предоплату</p>
 					</li>
-					<li>
+					<li data-aos="fade-up-right" data-aos-delay="400">
 						<img src="img/how__icon4.png" alt="icon" class="how__img">
 						<p class="how__text">Ретро-автобус на пути к вам</p>
 					</li>
@@ -592,7 +597,7 @@
 		<div class="row">
 			<div class="col-md-12 offset-md-0 col-lg-8 offset-lg-2">
 
-				<form  class="flyform__form" method="POST"  autocomplete="off">
+				<form  class="flyform__form" method="POST"  autocomplete="off" data-aos="zoom-in" data-aos-delay="500">
 					<h2 class="flyform__title">Проверить доступность ретро-автобуса на нужную дату?</h2>
 					<input type="text" name="name" placeholder="Имя" required>
 					<input type="text" name="phone" class="phone-mask" placeholder="Номер телефона" required>
@@ -610,27 +615,25 @@
 		<div class="row">
 			<div class="col-sm-12 col-md-5">
 
-				<img src="img/present__img.png" alt="photos" class="present__img">
+				<img src="img/present__img.png" alt="photos" class="present__img" data-aos="fade-up" data-aos-delay="200">
 
 			</div>
 			<div class="col-sm-12 col-md-7">
 
-				<h2 class="title present">Незабываемый праздник</h2>
-				<p class="present__text">Легендарный Volkswagen T2, он же Bulli, придаст ярких красок вашему мероприятию! <span> T2 - это икона эпохи хиппи и рока, жажды свободы и приключений. Подарите себе эмоции позитива и неповторимые кадры на всю жизнь.</span></p>
+				<h2 class="title present" data-aos="fade-up" data-aos-delay="300">Незабываемый праздник</h2>
+				<p class="present__text" data-aos="fade-up" data-aos-delay="400">Легендарный Volkswagen T2, он же Bulli, придаст ярких красок вашему мероприятию! <span> T2 - это икона эпохи хиппи и рока, жажды свободы и приключений. Подарите себе эмоции позитива и неповторимые кадры на всю жизнь.</span></p>
 
 			</div>
 		</div>
 	</div>
 
-	<section id="rules">
+	<section id="rules" >
 		<div class="container">
 			<div class="row">
 				<div class="col">
 
-					<h2 class="title black">Правила аренды ретро-автобусов:</h2>
-
-					<p class="rules__text">
-					<ul class="rules__list shadow">
+					<h2 class="title black" data-aos="fade-up">Правила аренды ретро-автобусов:</h2>
+					<ul class="rules__list shadow" data-aos="fade-up">
 						<li>1. Заказ и оплата</li>
 						<li>1.1 Оплата услуг аренды автомобилей производится до начала поездки, в соответствии с расценками. </li>
 						<li>1.2 Предоплата услуг аренды автомобилей берется в размере стоимости подачи авто. Предоплата вносится в день оформления заявки на аренду. </li>
@@ -662,7 +665,7 @@
 						<li>3.5 В случае отказа от предварительно сделанного вами заказа предоплата не возвращается.</li>
 						<li>3.6 Мы не несем ответственности за опоздания, вызванные не зависящими от нас причинами.</li>
 					</ul>
-					<button class="rules__more">Развернуть</button>
+					<button class="rules__more" data-opened="Свернуть" data-close="Развернуть" data-aos="zoom-in">Развернуть</button>
 
 				</div>
 			</div>
@@ -677,7 +680,7 @@
 		<div class="row">
 			<div class="col-md-12 offset-md-0 col-lg-8 offset-lg-2">
 
-				<form  class="flyform__form" method="POST"  autocomplete="off">
+				<form  class="flyform__form" method="POST"  autocomplete="off" data-aos="zoom-out-up">
 					<h2 class="flyform__title">Проверить доступность ретро-автобуса на нужную дату?</h2>
 					<input type="text" name="name" placeholder="Имя" required>
 					<input type="text" name="phone" class="phone-mask" placeholder="Номер телефона" required>
@@ -693,25 +696,25 @@
 <footer>
 	<div class="container">
 		<div class="row">
-			<div class="col-md-6 col-lg-3">
+			<div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-offset="0" data-aos-delay="100">
 
 				<h3 class="footer__subtitle">Звоните</h3>
 				<a href="tel:+380952167315" class="footer__text">+38 (095) 216-73-15</a>
 				
 			</div>
-			<div class="col-md-6 col-lg-3">
+			<div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-offset="0" data-aos-delay="200">
 				
 				<h3 class="footer__subtitle">Пишите</h3>
 				<a href="mailto:info@prokatlimuzinov.com" class="footer__text">info@prokatlimuzinov.com</a>
 				
 			</div>
-			<div class="col-md-6 col-lg-3">
+			<div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-offset="0" data-aos-delay="300">
 
 				<h3 class="footer__subtitle">Мы работаем</h3>
 				<p class="footer__text">без выходных с 9.00-21.00</a>
 				
 			</div>
-			<div class="col-md-6 col-lg-3">
+			<div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-offset="0" data-aos-delay="400">
 
 				<h3 class="footer__subtitle">Мы в соцсетях</h3>
 				<ul class="footer__social">
@@ -723,7 +726,7 @@
 			</div>
 		</div>
 		<div class="row">
-			<div class="col">
+			<div class="col" data-aos="fade-up" data-aos-offset="0" data-aos-delay="500">
 
 				<p class="footer__copywrite">Проект принадлежит: <span>Компания <a href="//prokatlimuzinov.com/" target="_blank">Prokat Limuzinov</a></span></p>
 
@@ -756,19 +759,18 @@
 
 <div class="modal animated fade" id="modal__order" tabindex="-1" role="dialog" aria-hidden="true">
 	<div class="modal-dialog" role="document">
-    	<div class="modal-content">
+		<div class="modal-content">
 
 			<button type="button" class="close" data-dismiss="modal" >&times;</button>
-			
+
 			<h3 class="modal__title">Проверить доступность <br>ретро-автобуса на нужную дату?</h3>
-			<!-- <form class="modal__form" method="POST"  autocomplete="off"> -->
-			<form class="modal__form" method="POST" >
+			<form class="modal__form" method="POST"  autocomplete="off">
 				<input type="text" name="name" placeholder="Имя" required>
 				<input type="text" name="phone" class="phone-mask" placeholder="Номер телефона" required>
 				<button type="submit" class="btn">Оставить заявку</button>
 			</form>
 
-    	</div>
+		</div>
 	</div>
 </div>
 
