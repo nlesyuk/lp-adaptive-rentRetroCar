@@ -14,18 +14,23 @@ $(document).ready(function() {
 			throttleDelay: 99, // the delay on throttle used while scrolling the page (advanced)
 			
 			// Settings that can be overridden on per-element basis, by `data-aos-*` attributes:
-			offset: 500, // offset (in px) from the original trigger point
+			offset: 300, // offset (in px) from the original trigger point
 			delay: 0, // values from 0 to 3000, with step 50ms
 			duration: 800, // values from 0 to 3000, with step 50ms
 			easing: 'ease', // default easing for AOS animations
 			once: false, // whether animation should happen only once - while scrolling down
 			mirror: false, // whether elements should animate out while scrolling past them
 			anchorPlacement: 'top-bottom', // defines which position of the element regarding to window should trigger the animation
-		});
+		}); 
+		// document.head.innerHTML += '<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" integrity="sha256-GqiEX9BuR1rv5zPU5Vs2qS/NSHl1BJyBcjQYJ6ycwD4=" crossorigin="anonymous" />';
 	} else {
-		AOS.init({
-			disable: true
-		});
+		$("link[href*='aos.css']").remove();
+		$("script[src*='aos.js']").remove();
+		$('body').find('*[attr*=data-aos]').data('aos', '');
+		// AOS.init({
+		// 	disable: true
+		// });
+		alert("test");
 	}
 
 // mobile menu
@@ -86,7 +91,6 @@ $(document).ready(function() {
 		var item  = event.item.index;
 		$('.owl__num .current').text(item+1);
 		$('.owl__num .all').text(items);
-		// console.log('items: ', items, 'item: ', item);
 	}
 
 
@@ -99,19 +103,57 @@ $(document).ready(function() {
 			$(this).text( $(this).data('close') );
 			// list
 			$("#rules .rules__list").removeClass('opened');
+			// scroll to anchor
+			$('html, body').animate({
+				scrollTop: $("#rules").offset().top
+			}, 300);
+			console.log("CLOSED");
 		} else {
 			// btn
 			$(this).addClass('opened');
 			$(this).text($(this).data('opened'));
 			// list
 			$("#rules .rules__list").addClass('opened');
+			console.log("OPENED");
 		}
 
 	});
 
+// tooltip
+	$(document).on('click', function(e){
+		var isHasClass = e.target.classList.contains('price__tooltip');
+		var parent = e.target.closest('.price__tooltip');
+
+		if( isHasClass || parent){
+			$(".price__tooltip").toggleClass('active');
+		} else {
+			$(".price__tooltip").removeClass('active');
+		}
+	});
+
+// detect old browsers
+	var br = detectedBrowser();
+	var isUseAJAX = true;
+	if( 
+		br.name === 'Chrome' && br.majorVersion <= 65
+		||
+		br.name === 'Opera' && br.majorVersion <= 65
+		||
+		br.name === 'Safari' && br.majorVersion <= 7
+		||
+		br.name === 'Firefox' && br.majorVersion <= 55
+	) {
+		var form = document.querySelectorAll('form');
+		for(var i = 0; i < form.length; i++ ) {
+			form[i].setAttribute('action', 'send-deprecated.php')
+		}
+		isUseAJAX = false;
+	}
+	// document.querySelectorAll('form')[0].setAttribute('action', 'send.php')
 
 // send form
-	$( "form" ).on( "submit", function( event ) {
+$( "form" ).on( "submit", function( event ) {
+	if( isUseAJAX ){
 		event.preventDefault();
 		var form = this; 
 		var data = $(form).serialize();
@@ -142,22 +184,8 @@ $(document).ready(function() {
 				alert("Error while send data! =(");
 			}
 		});
-	});
-
-// 
-// $(".price__tooltip")
-$(document).on('click', function(e){
-	var isHasClass = e.target.classList.contains('price__tooltip');
-	var parent = e.target.closest('.price__tooltip');
-	// console.log(parent, isHasClass);
-
-	if( isHasClass || parent){
-		$(".price__tooltip").toggleClass('active');
-	} else {
-		$(".price__tooltip").removeClass('active');
 	}
 });
-
 //end ready
 });
 
@@ -274,10 +302,8 @@ $(document).on('click', function(e){
 
 
 document.addEventListener("DOMContentLoaded", function(){
-	// video 
 	findVideos();
 });
-
 // videos 
 	function findVideos() {
 		let videos = document.querySelectorAll('.video');
@@ -333,3 +359,76 @@ document.addEventListener("DOMContentLoaded", function(){
 		return 'https://www.youtube.com/embed/' + id + query;
 	}
 
+	function detectedBrowser() {
+		var nVer = navigator.appVersion;
+		var nAgt = navigator.userAgent;
+		var browserName  = navigator.appName;
+		var fullVersion  = ''+parseFloat(navigator.appVersion); 
+		var majorVersion = parseInt(navigator.appVersion,10);
+		var nameOffset,verOffset,ix;
+
+		// In Opera, the true version is after "Opera" or after "Version"
+		if ((verOffset=nAgt.indexOf("Opera"))!=-1) {
+		browserName = "Opera";
+		fullVersion = nAgt.substring(verOffset+6);
+		if ((verOffset=nAgt.indexOf("Version"))!=-1) 
+		fullVersion = nAgt.substring(verOffset+8);
+		}
+		// In MSIE, the true version is after "MSIE" in userAgent
+		else if ((verOffset=nAgt.indexOf("MSIE"))!=-1) {
+		browserName = "Microsoft Internet Explorer";
+		fullVersion = nAgt.substring(verOffset+5);
+		}
+		// In Chrome, the true version is after "Chrome" 
+		else if ((verOffset=nAgt.indexOf("Chrome"))!=-1) {
+		browserName = "Chrome";
+		fullVersion = nAgt.substring(verOffset+7);
+		}
+		// In Safari, the true version is after "Safari" or after "Version" 
+		else if ((verOffset=nAgt.indexOf("Safari"))!=-1) {
+		browserName = "Safari";
+		fullVersion = nAgt.substring(verOffset+7);
+		if ((verOffset=nAgt.indexOf("Version"))!=-1) 
+		fullVersion = nAgt.substring(verOffset+8);
+		}
+		// In Firefox, the true version is after "Firefox" 
+		else if ((verOffset=nAgt.indexOf("Firefox"))!=-1) {
+		browserName = "Firefox";
+		fullVersion = nAgt.substring(verOffset+8);
+		}
+		// In most other browsers, "name/version" is at the end of userAgent 
+		else if ( (nameOffset=nAgt.lastIndexOf(' ')+1) < 
+				(verOffset=nAgt.lastIndexOf('/')) ) 
+		{
+		browserName = nAgt.substring(nameOffset,verOffset);
+		fullVersion = nAgt.substring(verOffset+1);
+		if (browserName.toLowerCase()==browserName.toUpperCase()) {
+		browserName = navigator.appName;
+		}
+		}
+		// trim the fullVersion string at semicolon/space if present
+		if ((ix=fullVersion.indexOf(";"))!=-1)
+		fullVersion=fullVersion.substring(0,ix);
+		if ((ix=fullVersion.indexOf(" "))!=-1)
+		fullVersion=fullVersion.substring(0,ix);
+
+		majorVersion = parseInt(''+fullVersion,10);
+		if (isNaN(majorVersion)) {
+		fullVersion  = ''+parseFloat(navigator.appVersion); 
+		majorVersion = parseInt(navigator.appVersion,10);
+		}
+		var OSName="Unknown OS";
+		if (navigator.appVersion.indexOf("Win")!=-1) OSName="Windows";
+		if (navigator.appVersion.indexOf("Mac")!=-1) OSName="MacOS";
+		if (navigator.appVersion.indexOf("X11")!=-1) OSName="UNIX";
+		if (navigator.appVersion.indexOf("Linux")!=-1) OSName="Linux";
+
+		return {
+			name: browserName,
+			fullVersion: fullVersion,
+			majorVersion: majorVersion,
+			appName: navigator.appName,
+			userAgent: navigator.userAgent,
+			OS: OSName
+		}
+	}

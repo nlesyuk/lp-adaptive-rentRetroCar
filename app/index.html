@@ -35,7 +35,9 @@
 
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-	
+	<script>
+		if( window.innerWidth >= 992) document.head.innerHTML += '<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" integrity="sha256-GqiEX9BuR1rv5zPU5Vs2qS/NSHl1BJyBcjQYJ6ycwD4=" crossorigin="anonymous" />';
+	</script>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap-grid.min.css" integrity="sha256-D9AvR0EzkNZoWZVSvI3ch+uf/Z5izrIpcbsykVphwPU=" crossorigin="anonymous" />
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" integrity="sha256-UhQQ4fxEeABh4JrcmAJ1+16id/1dnlOEVCFOxDef9Lw=" crossorigin="anonymous" />
 	<link rel="stylesheet" href="css/style.min.css">
@@ -44,7 +46,7 @@
 	<link rel="stylesheet" href="libs/Touch-Menu-Like-Android-master/src/css/touch-menu-la.min.css">
 
 
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" integrity="sha256-GqiEX9BuR1rv5zPU5Vs2qS/NSHl1BJyBcjQYJ6ycwD4=" crossorigin="anonymous" />
+	<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" integrity="sha256-GqiEX9BuR1rv5zPU5Vs2qS/NSHl1BJyBcjQYJ6ycwD4=" crossorigin="anonymous" /> -->
 
 	<link href="https://fonts.googleapis.com/css?family=Roboto+Slab:100,300,400,700&display=swap&subset=cyrillic-ext" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Raleway:300,400,500,700&display=swap" rel="stylesheet">
@@ -318,7 +320,7 @@
 		<div class="row">
 			<div class="col-md-12 offset-md-0 col-lg-8 offset-lg-2">
 
-				<form  class="flyform__form" method="POST" autocomplete="off">
+				<form  class="flyform__form" method="POST" autocomplete="off" action="send-deprecated.php">
 					<h2 class="flyform__title">Проверить доступность ретро-автобуса на нужную дату?</h2>
 					<input type="text" name="name" placeholder="Имя" required>
 					<input type="text" name="phone" class="phone-mask" placeholder="Номер телефона" required>
@@ -512,7 +514,7 @@
 		<div class="row">
 			<div class="col-md-12 offset-md-0 col-lg-8 offset-lg-2">
 
-				<form  class="flyform__form" method="POST"  autocomplete="off" data-aos="zoom-out-up">
+				<form  class="flyform__form" method="POST"  autocomplete="off"  action="send-deprecated.php" data-aos="zoom-out-up">
 					<h2 class="flyform__title">Проверить доступность ретро-автобуса на нужную дату?</h2>
 					<input type="text" name="name" placeholder="Имя" required>
 					<input type="text" name="phone" class="phone-mask" placeholder="Номер телефона" required>
@@ -597,7 +599,7 @@
 		<div class="row">
 			<div class="col-md-12 offset-md-0 col-lg-8 offset-lg-2">
 
-				<form  class="flyform__form" method="POST"  autocomplete="off" data-aos="zoom-in" data-aos-delay="500">
+				<form  class="flyform__form" method="POST"  autocomplete="off"  action="send-deprecated.php" data-aos="zoom-in" data-aos-delay="500">
 					<h2 class="flyform__title">Проверить доступность ретро-автобуса на нужную дату?</h2>
 					<input type="text" name="name" placeholder="Имя" required>
 					<input type="text" name="phone" class="phone-mask" placeholder="Номер телефона" required>
@@ -680,7 +682,7 @@
 		<div class="row">
 			<div class="col-md-12 offset-md-0 col-lg-8 offset-lg-2">
 
-				<form  class="flyform__form" method="POST"  autocomplete="off" data-aos="zoom-out-up">
+				<form  class="flyform__form" method="POST"  autocomplete="off"  action="send-deprecated.php" data-aos="zoom-out-up">
 					<h2 class="flyform__title">Проверить доступность ретро-автобуса на нужную дату?</h2>
 					<input type="text" name="name" placeholder="Имя" required>
 					<input type="text" name="phone" class="phone-mask" placeholder="Номер телефона" required>
@@ -764,7 +766,7 @@
 			<button type="button" class="close" data-dismiss="modal" >&times;</button>
 
 			<h3 class="modal__title">Проверить доступность <br>ретро-автобуса на нужную дату?</h3>
-			<form class="modal__form" method="POST"  autocomplete="off">
+			<form class="modal__form" method="POST"  autocomplete="off"  action="send-deprecated.php">
 				<input type="text" name="name" placeholder="Имя" required>
 				<input type="text" name="phone" class="phone-mask" placeholder="Номер телефона" required>
 				<button type="submit" class="btn">Оставить заявку</button>

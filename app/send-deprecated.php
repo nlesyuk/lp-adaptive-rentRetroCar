@@ -1,4 +1,5 @@
 <?php
+header('Content-Type: text/html; charset=utf-8');
 $Result = array(
 	"status" => "ERROR",
 	"error" => "Data is empty",
@@ -42,5 +43,6 @@ if(isset($_POST) && !empty($_POST)){
 		$Result['data'] = $Name ." ".$Phone;
 	}
 }
-echo json_encode($Result); 
+// echo json_encode($Result); 
 // Header('Location: success.html'); 
+echo "<h1 style='text-align: center; margin: 24px 0; font-size: 3rem;'>Спасибо за заявку! Мы Вам перезвоним.</h1>";
