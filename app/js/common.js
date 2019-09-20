@@ -27,10 +27,9 @@ $(document).ready(function() {
 		$("link[href*='aos.css']").remove();
 		$("script[src*='aos.js']").remove();
 		$('body').find('*[attr*=data-aos]').data('aos', '');
-		// AOS.init({
-		// 	disable: true
-		// });
-		alert("test");
+		AOS.init({
+			disable: true
+		});
 	}
 
 // mobile menu
@@ -134,7 +133,7 @@ $(document).ready(function() {
 // detect old browsers
 	var br = detectedBrowser();
 	var isUseAJAX = true;
-	if( 
+	if(
 		br.name === 'Chrome' && br.majorVersion <= 65
 		||
 		br.name === 'Opera' && br.majorVersion <= 65
@@ -156,10 +155,17 @@ $( "form" ).on( "submit", function( event ) {
 	if( isUseAJAX ){
 		event.preventDefault();
 		var form = this; 
+
+		var url = window.location.href;
+		var phpHandler = "send.php";
+		if( url.indexOf('ua') != -1) phpHandler = "/send.php";
+		// pathname
+
 		var data = $(form).serialize();
 		$.ajax({
 			type: 'POST',
-			url: "send.php",
+			// url: phpHandler,
+			url: "/send.php",
 			dataType: "html",
 			data: data,
 			success: function(data) {
