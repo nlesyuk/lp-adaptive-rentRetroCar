@@ -7,9 +7,10 @@ var gulp 		 = require('gulp'),
  
 gulp.task('browser-sync', function(){
 	browserSync({
-		server: {
-			baseDir: 'app'
-		},
+		// server: {
+		// 	baseDir: 'app'
+		// },
+		proxy: "http://gulp.loc", 
 		notify: false
 	});
 });
@@ -29,6 +30,11 @@ gulp.task('code', function() {
     .pipe(browserSync.reload({ stream: true }))
 });
 
+gulp.task('phpcode', function() {
+    return gulp.src('app/*.php')
+    .pipe(browserSync.reload({ stream: true }))
+});
+
 gulp.task('scripts', function() {
     return gulp.src(['app/js/common.js', 'app/libs/**/*.js'])
     .pipe(browserSync.reload({ stream: true }))
@@ -37,22 +43,9 @@ gulp.task('scripts', function() {
 gulp.task('watch', function(){
 	gulp.watch('app/sass/**/*.sass', gulp.parallel('sass') );
 	gulp.watch('app/*.html', gulp.parallel('code') );
+	gulp.watch('app/*.php', gulp.parallel('phpcode') );
     gulp.watch('app/js/**/*.js', gulp.parallel('scripts') );
 });
 
 gulp.task('default', gulp.parallel('sass', 'browser-sync', 'watch') );
 
-
-// *.sass - выбирает все файлы, имеющие определенное расширение (в данном случае, .sass) в корневой папке проекта.
-// **/*.js - выбирает все файлы с расширением .js во всех папках проекта.
-// !header.sass - исключает файл из общей выборки
-// *.+(scss|sass) - задает комплексный шаблон для нескольких типов файлов, разделенных вертикальной чертой. В данном примере в выборкупопадут любые sass и scss файлы в корне проекта.
-
-// _part-1.sass
-// @import to main file
-// Обратите внимание, что при импорте в Sass простых CSS файлов библиотек, расширение файла .css не указывается.
-
-
-/* 
-https://codeburst.io/switching-to-gulp-4-0-271ae63530c0
-*/
